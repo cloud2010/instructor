@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+
+    <script type="text/javascript" src="../javascripts/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/lottery.css" />
+
+
+</head>
+
+<body style="background-color:#97cbff;">
+
+    <div id="wrapper">
+        <div id="lottery">
+            <div id="lottery-hero" onclick="show()">
+                <img alt="" style="display:none" />
+            </div>
+
+            <div id="lottery-container">
+                <ul>
+
+                    <li>
+                        <img>
+                    </li>
+                    <li>
+                        <img>
+                    </li>
+                    <li>
+                        <img>
+                    </li>
+                    <li>
+                        <img>
+                    </li>
+                    <li>
+                        <img>
+                    </li>
+                    <li>
+                        <img>
+                    </li>
+                    <li>
+                        <img>
+                    </li>
+                    <!-- <li><img></sli> -->
+
+
+                </ul>
+            </div>
+            <div id="lottery-control">
+                <button type="button" onclick="Lottery.start()">开始</button>
+                <button type="button" onclick="Lottery.stop()">停止</button>
+                <button type="button" onclick="show()">显示</button>
+            </div>
+            <div id="lottery-selected"></div>
+        </div>
+    </div>
+
+    <div id="show_image" style="width:1000px;height:600px;display:none;background-color:#97cbff; ">
+        <div style="float:left;width:15%;height:100%;margin-top:10px;">
+            <a style="text-align: center;">
+                <h5>学生信息显示</h5>
+            </a>
+        </div>
+        <div style="float:left; width:85%; height:100%;margin-top:20px;">
+            <table style="width:auto;border:1px;">
+                <!-- /*<td style="width:100px;height:auto;">*/ -->
+                <tr>
+                    <td id="id1">
+                        <img>
+                    </td>
+                    <td id="id2">
+                        <img>
+                    </td>
+                    <td id="id3">
+                        <img>
+                    </td>
+                    <td id="id4">
+                        <img>
+                    </td>
+                    <td id="id5">
+                        <img>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="id6">
+                        <img>
+                    </td>
+                    <td id="id7">
+                        <img>
+                    </td>
+                    <td id="id8">
+                        <img>
+                    </td>
+                    <td id="id9">
+                        <img>
+                    </td>
+                    <td id="id10">
+                        <img>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="">
+                        <button type="button" id="b01">显示</button>
+                        <button type="button" id="close" onclick="reload()">关闭</button>
+                    </td>
+                    <td colspan="4" id="myDiv"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="text-align:center;margin:50px 0;">
+        <h2>上海海事大学辅导员考核</h2>
+    </div>
+    <script type="text/javascript" src="../javascripts/jquery.js"></script>
+    <script type="text/javascript" src="../javascripts/lottery.js"></script>
+    <script>
+        var random = function (min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        var total = 8
+        var ran1 = random(1, total);
+        var ran2 = random(1, total);
+        var ran3 = random(1, total);
+        var ran4 = random(1, total);
+        var ran5 = random(1, total);
+        var ran6 = random(1, total);
+        var ran7 = random(1, total);
+
+        var src1 = "images/" + ran1 + ".jpg"
+        var src2 = "images/" + ran2 + ".jpg"
+        var src3 = "images/" + ran3 + ".jpg"
+        var src4 = "images/" + ran4 + ".jpg"
+        var src5 = "images/" + ran5 + ".jpg"
+        var src6 = "images/" + ran6 + ".jpg"
+        var src7 = "images/" + ran7 + ".jpg"
+
+
+
+        var ran = new Array()
+        ran[0] = ran1;
+        ran[1] = ran2;
+        ran[2] = ran3;
+        ran[3] = ran4;
+        ran[4] = ran5;
+        ran[5] = ran6;
+        ran[6] = ran7;
+
+        var new_array = ran.sort()
+
+        for (var i = 1; i < new_array.length; i++) {
+            if (new_array[i] == new_array[i - 1]) {
+                window.location.reload();
+                // alert(new_array)
+            } else {
+                $("#lottery-container ul li").find("img").eq(0).attr('src', src1);
+                $("#lottery-container ul li").find("img").eq(1).attr('src', src2);
+                $("#lottery-container ul li").find("img").eq(2).attr('src', src3);
+                $("#lottery-container ul li").find("img").eq(3).attr('src', src4);
+                $("#lottery-container ul li").find("img").eq(4).attr('src', src5);
+                $("#lottery-container ul li").find("img").eq(5).attr('src', src6);
+                $("#lottery-container ul li").find("img").eq(6).attr('src', src7);
+
+            }
+        }
+
+        var reload = function () {
+            // $("#show_image").hide();
+            // $("#wrapper").show();
+            window.location.reload();
+        }
+        var show = function () {
+            $("#show_image").show();
+            $("#wrapper").hide();
+        }
+    </script>
+</body>
+
+</html>
