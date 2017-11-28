@@ -1,3 +1,33 @@
+/**
+ * 同步获取 json
+ * @param {*} urlInfo - 请求地址
+ */
+function syncJson(urlInfo) {
+    var result;
+    $.ajax({
+        type: 'GET',
+        url: urlInfo,
+        dataType: 'json',
+        async: false,
+        success: function (data) {
+            result = data;
+        }
+    });
+    return result;
+}
+
+/**
+ * 获取JSON长度
+ * @param {*} json json变量
+ */
+function getJsonLength(json){
+    var jsonLength=0;
+    for (var i in json) {
+        jsonLength++;
+    }
+    return jsonLength;
+}
+
 !(function () {
     'use strict';
     // 切换为同步执行(阻塞后续代码)
@@ -11,34 +41,23 @@
     // });
     // 加载完成相关数据后切换为异步非阻塞
     // $.ajaxSettings.async = true;
-    
+
     //匿名函数ajax同步执行先加载完数据
-    var users = (function () {
-        var result;
-        $.ajax({
-            type: 'GET',
-            url: '/data',
-            dataType: 'json',
-            async: false,
-            success: function (data) {
-                result = data;
-            }
-        });
-        return result;
-    })();
+    var users = syncJson('/data');
+
+    //获取随机人员照片信息
+    var photos = syncJson('/rand');
 
     console.log('人员信息:', users.info);
+    console.log('随机照片信息:', photos);
 
+    // 文件数
     var file_num = 7;
-    var photo_row = 1;
-    var photo_col = 10;
-    var photo_num = photo_row * photo_col;
-    var gallery = $('#gallery');
-    var photos = [];
+    // 随机照片数组长度
+    var photo_num = getJsonLength(photos);
+    console.log('photo_num=', photo_num);
 
-    for (var i = 1; i <= photo_num; i++) {
-        photos.push('/images/photo/' + Math.ceil(Math.random() * file_num) + '.jpg');
-    }
+    var gallery = $('#gallery');
 
     var loadedIndex = 1;
 
