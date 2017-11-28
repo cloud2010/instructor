@@ -25,7 +25,7 @@
         var h2_name = document.createElement('h2');
         var user_id = parseInt(photo.substring(14, 15)) - 1;
 
-        link.href = 'instructor?user=' + photo.substring(14, 15);
+        link.href = '/instructor/' + photo.substring(14, 15);
         // link.target = "_blank";
         h2_name.innerText = users.info[user_id].name;
         link.appendChild(img);
@@ -102,7 +102,7 @@
                 var rand_pos = Math.ceil(Math.random() * photo_num);
                 var user_num = parseInt(rand_file) - 1;
                 $('#gallery li:eq(' + rand_pos + ') img').attr('src', '/images/photo/' + rand_file + '.jpg');
-                $('#gallery li:eq(' + rand_pos + ') a').attr('href', 'instructor?user=' + rand_file);
+                $('#gallery li:eq(' + rand_pos + ') a').attr('href', '/instructor/' + rand_file);
                 $('#gallery li:eq(' + rand_pos + ') h2').text(users.info[user_num].name);
             }, 1);
         } else {

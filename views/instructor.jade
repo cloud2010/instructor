@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #logo(align='center')
+    img(src='/images/SMU-inverse.png', alt='logo', width='30%')
+  #instructor(align='center')
+    h1 #{dept} - #{name}
+  ul#gallery
+  div(style='clear:both')
+  div(style='text-align:center; padding-top:60px;')
+    button#action(class='button button-3d button-action button-pill button-jumbo', style='font-size:40px; width:auto;', data-action='start') 显示学生信息
+    button#back(class='button button-3d button-action button-pill button-jumbo', style='font-size:40px; width:200px;', data-action='back') 返回
+  script(src='/javascripts/jquery.js')
+  script(src='/javascripts/buttons.js')
+  script(src='/javascripts/stu.js')
