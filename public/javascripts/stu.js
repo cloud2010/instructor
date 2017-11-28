@@ -1,4 +1,37 @@
-//获取url中的参数
+/**
+ * 同步获取 json
+ * @param {*} urlInfo - 请求地址
+ */
+function syncJson(urlInfo) {
+    var result;
+    $.ajax({
+        type: 'GET',
+        url: urlInfo,
+        dataType: 'json',
+        async: false,
+        success: function (data) {
+            result = data;
+        }
+    });
+    return result;
+}
+
+/**
+ * 获取JSON长度
+ * @param {*} json - json变量
+ */
+function getJsonLength(json){
+    var jsonLength=0;
+    for (var i in json) {
+        jsonLength++;
+    }
+    return jsonLength;
+}
+
+/**
+ * 获取url中的参数
+ * @param {*} name - url参数
+ */
 function getUrlParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
     var r = window.location.search.substr(1).match(reg); //匹配目标参数
@@ -12,34 +45,6 @@ function errorHandler(err) {
 
 !(function () {
     'use strict';
-
-    // var users_info = '{"info":[{"number":1,"name":"孙冬","dept":"信息工程学院"},{"number":2,"name":"李吉彬","dept":"信息工程学院"},{"number":3,"name":"周媛","dept":"信息工程学院"},{"number":4,"name":"曹利红","dept":"信息工程学院"},{"number":5,"name":"鲍万松","dept":"信息工程学院"},{"number":6,"name":"李万秀","dept":"信息工程学院"},{"number":7,"name":"刘旻","dept":"信息工程学院"}]}';
-
-    // // 获取辅导员对应id
-    // var user_id = getUrlParam("user");
-
-    // // 解析JSON读取对应ID辅导员的基本信息
-    // var users = $.parseJSON(users_info);
-    // var user_num = parseInt(user_id) - 1;
-    // console.log("JSON Data:" + users.info[user_num].name);
-
-    // $('title').text(users.info[user_num].dept + " - " + users.info[user_num].name);
-    // $('#instructor h1').text(users.info[user_num].dept + " - " + users.info[user_num].name);
-
-    // window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
-    // console.info(navigator.webkitTemporaryStorage);
-    // window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, function (fs) {
-    //     console.info('Welcome to HTML5 Filesystem!');
-    //     fs.root.getDirectory('photo', {
-    //         create: false
-    //     }, function (dirEntry) {
-    //         var dirReader = dirEntry.createReader();
-    //         console.info(dirReader);
-    //         dirReader.readEntries(function (entries) {
-    //             console.info(entries);
-    //         }, errorHandler);
-    //     }, errorHandler);
-    // }, errorHandler);
 
     var file_num = 10;
     var photo_row = 1;

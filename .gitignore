@@ -1,5 +1,6 @@
 # Photos
-/public/images/photo/*
+*.jpg
+*.zip
 # Logs
 logs
 *.log
