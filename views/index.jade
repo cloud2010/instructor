@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  #logo(align='center')
+    img(src='/images/SMU-inverse.png', alt='logo', width='30%')
+  #sys(align='center')
+    h1 学生处“两随机”抽查系统
+  ul#gallery
+  div(style='clear:both')
+  div(style='text-align:center; padding-top:60px;')
+    button#action(class='button button-3d button-action button-pill button-jumbo', style='font-size:40px; width:200px;', data-action='start') 开始
+    button#refresh(class='button button-3d button-action button-pill button-jumbo', style='font-size:40px; width:200px;', data-action='refresh') 刷新
+  script(src='/javascripts/jquery.js')
+  script(src='/javascripts/buttons.js')
+  script(src='/javascripts/index.js')
