@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/data', function(req, res){
+  // 向客户端响应人员信息
   res.send(instructor_info);
 });
 

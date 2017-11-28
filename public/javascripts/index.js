@@ -1,9 +1,33 @@
 !(function () {
     'use strict';
-    // 辅导员信息
-    var users_info = '{"info":[{"number":1,"name":"孙冬","dept":"信息工程学院"},{"number":2,"name":"李吉彬","dept":"信息工程学院"},{"number":3,"name":"周媛","dept":"信息工程学院"},{"number":4,"name":"曹利红","dept":"信息工程学院"},{"number":5,"name":"鲍万松","dept":"信息工程学院"},{"number":6,"name":"李万秀","dept":"信息工程学院"},{"number":7,"name":"刘旻","dept":"信息工程学院"}]}';
-    // 解析JSON读取对应ID辅导员的基本信息
-    var users = $.parseJSON(users_info);
+    // 切换为同步执行(阻塞后续代码)
+    // $.ajaxSettings.async = false;
+    // var users = '';
+    // 使用getJSON从服务端获取数据
+    // $.getJSON('/data', function (data) {
+    //     // 辅导员信息
+    //     console.log('人员信息:', data.info);
+    //     users = data;
+    // });
+    // 加载完成相关数据后切换为异步非阻塞
+    // $.ajaxSettings.async = true;
+    
+    //匿名函数ajax同步执行先加载完数据
+    var users = (function () {
+        var result;
+        $.ajax({
+            type: 'GET',
+            url: '/data',
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                result = data;
+            }
+        });
+        return result;
+    })();
+
+    console.log('人员信息:', users.info);
 
     var file_num = 7;
     var photo_row = 1;

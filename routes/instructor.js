@@ -9,7 +9,7 @@ router.get('/:id', function (req, res) {
   // console.log('get请求参数对象 :', req.query);
   // console.log('post请求参数对象 :', req.body);
   // console.log('q的值为 :', req.params.id);
-  console.log('选中的辅导员信息：', instructor_info.info[req.params.id]);
+  console.log('选中的辅导员信息：', instructor_info.info[req.params.id - 1]);
   res.render('instructor', {
     // 绑定数据到客户端
     name: instructor_info.info[req.params.id - 1].name,
