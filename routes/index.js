@@ -32,7 +32,7 @@ router.get('/data', function (req, res) {
 
 /* 向客户端响应随机编号 */
 router.get('/rand', function (req, res) {
-  res.send(generateRand(7, 1, 10));
+  res.send(generateRand(71, 1, 10));
 });
 
 module.exports = router;

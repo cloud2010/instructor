@@ -5,10 +5,11 @@ block content
     img(src='/images/SMU-inverse.png', alt='logo', width='30%')
   #instructor(align='center')
     h1 #{dept} - #{name}
+    span#num(style='display:none') #{number}
   ul#gallery
   div(style='clear:both')
   div(style='text-align:center; padding-top:60px;')
-    button#action(class='button button-3d button-action button-pill button-jumbo', style='font-size:40px; width:auto; margin-right:20px', data-action='start') 显示学生信息
+    button#show(class='button button-3d button-action button-pill button-jumbo', style='font-size:40px; width:auto; margin-right:20px', data-action='show') 显示学生信息
     button#back(class='button button-3d button-action button-pill button-jumbo', style='font-size:40px; width:200px;', data-action='back') 返回
   script(src='/javascripts/jquery.js')
   script(src='/javascripts/buttons.js')

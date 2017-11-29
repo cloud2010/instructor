@@ -20,8 +20,8 @@ function syncJson(urlInfo) {
  * 获取JSON长度
  * @param {*} json - json变量
  */
-function getJsonLength(json){
-    var jsonLength=0;
+function getJsonLength(json) {
+    var jsonLength = 0;
     for (var i in json) {
         jsonLength++;
     }
@@ -45,16 +45,18 @@ function errorHandler(err) {
 
 !(function () {
     'use strict';
+    // 获取对应学生信息
+    var i_id = $('#num').text();
+    var stu_info = syncJson('/instructor/stu/' + i_id);
+    console.log(stu_info);
 
     var file_num = 10;
-    var photo_row = 1;
-    var photo_col = 10;
-    var photo_num = photo_row * photo_col;
+
     var gallery = $('#gallery');
     var photos = [];
 
-    for (var i = 1; i <= file_num; i++) {
-        photos.push('/images/photo/' + i + '.jpg');
+    for (var i in stu_info) {
+        photos.push('/images/' + i_id + '/' + stu_info[i]);
     }
 
     var loadedIndex = 1;
@@ -63,10 +65,13 @@ function errorHandler(err) {
         var img = document.createElement('img');
         var link = document.createElement('a');
         var li = document.createElement('li');
+        var h4_name = document.createElement('h4');
 
-        link.href = '#';
+        // link.href = '#';
+        h4_name.innerText = stu_info[index].split('.')[0];
         link.appendChild(img);
         li.appendChild(link);
+        li.appendChild(h4_name);
 
         gallery[0].appendChild(li);
 
@@ -78,32 +83,20 @@ function errorHandler(err) {
         };
 
         img.src = photo;
-
-        /* 此方式会将重复图片连在一起输出
-        var img = document.createElement('img');
-
-        img.onload = function(e){
-            img.onload = null;
-            var link = document.createElement('a');
-            var li = document.createElement('li');
-
-            link.href = '#';
-            link.appendChild(this);
-            li.appendChild(link);
-
-            gallery[0].appendChild(li);
-
-            setTimeout(function(){
-                $(li).addClass('loaded');
-            }, 25*loadedIndex++);
-        };
-        img.src = photo;
-        */
+        img.alt = stu_info[index];
     });
 
-    $(document).keypress(function (event) {
-        if (event.which == 13 || event.which == 32) {
-            $('#action').click();
+    // 隐藏学生信息
+    $('#gallery h4').hide();
+
+    // 显示学生信息
+    $('#show').click(function () {
+        if ($('#show').text() == '显示学生信息') {
+            $('#gallery h4').show(500);
+            $('#show').text('隐藏学生信息');
+        } else {
+            $('#gallery h4').hide(500);
+            $('#show').text('显示学生信息');
         }
     });
 

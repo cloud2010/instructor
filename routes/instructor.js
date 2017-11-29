@@ -33,11 +33,29 @@ router.get('/:id', function (req, res) {
   // console.log('post请求参数对象 :', req.body);
   // console.log('q的值为 :', req.params.id);
   console.log('选中的辅导员信息：', instructor_info.info[req.params.id - 1]);
-  res.render('instructor', {
-    // 绑定数据到客户端
-    name: instructor_info.info[req.params.id - 1].name,
-    dept: instructor_info.info[req.params.id - 1].dept
-  });
+  // var i_name = '无该辅导员信息';
+  // var i_dept = '';
+  // var i_sex = '';
+  // var i_university = '';
+  // var i_class = '';
+  // var i_number = '';
+  // var i_phone = '';
+  // var i_mobilephone = '';
+  // var specialwork = '';
+  // var direction = '';
+  // if (instructor_info.info[req.params.id - 1] !== undefined) {
+  //   i_name = instructor_info.info[req.params.id - 1].name;
+  //   i_dept = instructor_info.info[req.params.id - 1].dept;
+  // }
+  if (instructor_info.info[req.params.id - 1] !== undefined) {
+    // 数据绑定
+    res.render('instructor', instructor_info.info[req.params.id - 1]);
+  } else {
+    res.render('instructor', {
+      name: '无该辅导员信息',
+      dept: '学院'
+    });
+  }
 });
 
 router.get('/stu/:id', function (req, res) {

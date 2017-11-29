@@ -20,8 +20,8 @@ function syncJson(urlInfo) {
  * 获取JSON长度
  * @param {*} json json变量
  */
-function getJsonLength(json){
-    var jsonLength=0;
+function getJsonLength(json) {
+    var jsonLength = 0;
     for (var i in json) {
         jsonLength++;
     }
@@ -52,9 +52,9 @@ function getJsonLength(json){
     console.log('随机照片信息:', photos);
 
     // 文件数
-    var file_num = 7;
+    var file_num = 71;
     // 随机照片数组长度
-    var photo_num = getJsonLength(photos);
+    var photo_num = parseInt(getJsonLength(photos));
     console.log('photo_num=', photo_num);
 
     var gallery = $('#gallery');
@@ -66,11 +66,23 @@ function getJsonLength(json){
         var link = document.createElement('a');
         var li = document.createElement('li');
         var h2_name = document.createElement('h2');
-        var user_id = parseInt(photo.substring(14, 15)) - 1;
+        // 辅导员ID
+        var user_id = 0;
+        if (photo.length == 20) {
+            // 两位数编号
+            user_id = parseInt(photo.substring(14, 16)) - 1;
+        } else {
+            // 单位数编号
+            user_id = parseInt(photo.substring(14, 15)) - 1;
+        }
 
-        link.href = '/instructor/' + photo.substring(14, 15);
+        link.href = '/instructor/' + (user_id + 1);
         // link.target = "_blank";
-        h2_name.innerText = users.info[user_id].name;
+        if (users.info[user_id] !== undefined) {
+            h2_name.innerText = users.info[user_id].name;
+        } else {
+            h2_name.innerText = '姓名';
+        }
         link.appendChild(img);
         li.appendChild(link);
         li.appendChild(h2_name);
@@ -135,18 +147,22 @@ function getJsonLength(json){
             $(this).data('action', 'stop').html('停止');
             timer_big = setInterval(function () {
                 $('#gallery li.focus').removeClass('focus hover');
-                var rand = Math.ceil(Math.random() * photo_num);
+                var rand = Math.floor(Math.random() * photo_num);
                 $('#gallery li:eq(' + rand + ')').addClass('focus');
-            }, 100);
+            }, 500);
             timer_small = setInterval(function () {
                 // 随机辅导员照片
                 var rand_file = Math.ceil(Math.random() * file_num);
                 // 页面随机位置
-                var rand_pos = Math.ceil(Math.random() * photo_num);
+                var rand_pos = Math.floor(Math.random() * photo_num);
                 var user_num = parseInt(rand_file) - 1;
                 $('#gallery li:eq(' + rand_pos + ') img').attr('src', '/images/photo/' + rand_file + '.jpg');
                 $('#gallery li:eq(' + rand_pos + ') a').attr('href', '/instructor/' + rand_file);
-                $('#gallery li:eq(' + rand_pos + ') h2').text(users.info[user_num].name);
+                if (user.info[user_num] !== undefined) {
+                    $('#gallery li:eq(' + rand_pos + ') h2').text(users.info[user_num].name);
+                } else {
+                    $('#gallery li:eq(' + rand_pos + ') h2').text('姓名');
+                }
             }, 1);
         } else {
             $(this).data('action', 'start').html('开始');
