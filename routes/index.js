@@ -11,9 +11,19 @@ var router = express.Router();
  */
 function generateRand(file_num, photo_row, photo_col) {
   var photo_num = photo_row * photo_col;
+  var nums = [];
+  // 构建索引数组
+  for (var i = 1; i <= file_num; i++) {
+    nums.push(i);
+  }
   var photos = [];
-  for (var i = 1; i <= photo_num; i++) {
-    photos.push('/images/photo/' + Math.ceil(Math.random() * file_num) + '.jpg');
+  for (var i = 0; i < photo_num; i++) {
+    // 数组变长（每次有元素剔除）
+    var index = Math.floor(Math.random() * nums.length);
+    // 添加到输出数组
+    photos.push('/images/photo/' + nums[index] + '.jpg');
+    // 剔除每次已生成随机数的索引位置，保证随机数不重复
+    nums.splice(index, 1);
   }
   return photos;
 }
