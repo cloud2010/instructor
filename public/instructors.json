@@ -1,20 +1,20 @@
 {
 	"info": [{
 		"number": 1,
-		"name": "李万秀",
-		"dept": "信息工程学院",
+		"name": "董超群",
+		"dept": "商船学院",
 		"sex": "男",
-		"university": "上海海事大学信息管理与信息系统",
-		"class": "电信161、电信162、通信161、通信162、通信163，共168人",
-		"id": "910165",
-		"phone": "38282811",
-		"mobilephone": "18201722570",
-		"specialwork": "就业、校友",
-		"direction": "国防与安全教育"
+		"university": "上海海事大学",
+		"class": "",
+		"id": "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
 	}, {
 		"number": 2,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "卢三平",
+		"dept": "商船学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -25,9 +25,9 @@
 		"direction": ""
 	}, {
 		"number": 3,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "房玲",
+		"dept": "商船学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -37,8 +37,8 @@
 		"direction": ""
 	}, {
 		"number": 4,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "江小林",
+		"dept": "商船学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -49,8 +49,8 @@
 		"direction": ""
 	}, {
 		"number": 5,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "林志",
+		"dept": "商船学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -61,9 +61,9 @@
 		"direction": ""
 	}, {
 		"number": 6,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "黄晔",
+		"dept": "商船学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -73,8 +73,8 @@
 		"direction": ""
 	}, {
 		"number": 7,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "任胜超",
+		"dept": "商船学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -85,8 +85,8 @@
 		"direction": ""
 	}, {
 		"number": 8,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "丘烨",
+		"dept": "商船学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -97,8 +97,8 @@
 		"direction": ""
 	}, {
 		"number": 9,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "钱继成",
+		"dept": "商船学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -109,8 +109,8 @@
 		"direction": ""
 	}, {
 		"number": 10,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "吴长越",
+		"dept": "商船学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -121,8 +121,8 @@
 		"direction": ""
 	}, {
 		"number": 11,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "徐善凯",
+		"dept": "商船学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -133,8 +133,8 @@
 		"direction": ""
 	}, {
 		"number": 12,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "马丁",
+		"dept": "商船学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -145,9 +145,9 @@
 		"direction": ""
 	}, {
 		"number": 13,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "朱红红",
+		"dept": "交通运输学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -157,8 +157,8 @@
 		"direction": ""
 	}, {
 		"number": 14,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "徐晓毅",
+		"dept": "交通运输学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -169,9 +169,9 @@
 		"direction": ""
 	}, {
 		"number": 15,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "陈莉",
+		"dept": "交通运输学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -181,8 +181,8 @@
 		"direction": ""
 	}, {
 		"number": 16,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "都志亮",
+		"dept": "交通运输学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -193,8 +193,8 @@
 		"direction": ""
 	}, {
 		"number": 17,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "刘建",
+		"dept": "交通运输学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -205,9 +205,9 @@
 		"direction": ""
 	}, {
 		"number": 18,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "范晓云",
+		"dept": "交通运输学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -217,9 +217,9 @@
 		"direction": ""
 	}, {
 		"number": 19,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "陈祯如",
+		"dept": "交通运输学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -229,8 +229,8 @@
 		"direction": ""
 	}, {
 		"number": 20,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "张伟磐",
+		"dept": "交通运输学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -241,8 +241,8 @@
 		"direction": ""
 	}, {
 		"number": 21,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "黄大为",
+		"dept": "交通运输学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -253,8 +253,8 @@
 		"direction": ""
 	}, {
 		"number": 22,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "江海伦",
+		"dept": "交通运输学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -265,9 +265,9 @@
 		"direction": ""
 	}, {
 		"number": 23,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "郑巧",
+		"dept": "经济管理学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -277,9 +277,9 @@
 		"direction": ""
 	}, {
 		"number": 24,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "马卉",
+		"dept": "经济管理学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -289,8 +289,8 @@
 		"direction": ""
 	}, {
 		"number": 25,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "马士群",
+		"dept": "经济管理学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -301,9 +301,9 @@
 		"direction": ""
 	}, {
 		"number": 26,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "陈倩",
+		"dept": "经济管理学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -313,9 +313,9 @@
 		"direction": ""
 	}, {
 		"number": 27,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "陈兰",
+		"dept": "经济管理学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -325,8 +325,8 @@
 		"direction": ""
 	}, {
 		"number": 28,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "李毅",
+		"dept": "经济管理学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -337,8 +337,8 @@
 		"direction": ""
 	}, {
 		"number": 29,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "汤朱健",
+		"dept": "经济管理学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -349,9 +349,9 @@
 		"direction": ""
 	}, {
 		"number": 30,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "马莉艳",
+		"dept": "经济管理学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -361,8 +361,8 @@
 		"direction": ""
 	}, {
 		"number": 31,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "祝海宇",
+		"dept": "经济管理学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -373,8 +373,8 @@
 		"direction": ""
 	}, {
 		"number": 32,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "姚昌",
+		"dept": "经济管理学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -385,9 +385,9 @@
 		"direction": ""
 	}, {
 		"number": 33,
-		"name": "刘旻",
-		"dept": "信息工程学院",
-		"sex": "男",
+		"name": "杨娜",
+		"dept": "经济管理学院",
+		"sex": "女",
 		"university": "",
 		"class": "",
 		"id":  "",
@@ -397,8 +397,8 @@
 		"direction": ""
 	}, {
 		"number": 34,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "赵大为",
+		"dept": "经济管理学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -409,8 +409,8 @@
 		"direction": ""
 	}, {
 		"number": 35,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "郑瑞环",
+		"dept": "物流工程学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -421,8 +421,8 @@
 		"direction": ""
 	}, {
 		"number": 36,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "任阳",
+		"dept": "物流工程学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -433,8 +433,8 @@
 		"direction": ""
 	}, {
 		"number": 37,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "杨鸣",
+		"dept": "物流工程学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -445,8 +445,8 @@
 		"direction": ""
 	}, {
 		"number": 38,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "孟浩天",
+		"dept": "物流工程学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -457,8 +457,8 @@
 		"direction": ""
 	}, {
 		"number": 39,
-		"name": "刘旻",
-		"dept": "信息工程学院",
+		"name": "刘宏伟",
+		"dept": "物流工程学院",
 		"sex": "男",
 		"university": "",
 		"class": "",
@@ -469,6 +469,102 @@
 		"direction": ""
 	}, {
 		"number": 40,
+		"name": "刘一飞",
+		"dept": "物流工程学院",
+		"sex": "女",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 41,
+		"name": "万永刚",
+		"dept": "物流工程学院",
+		"sex": "男",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 42,
+		"name": "包艳",
+		"dept": "物流工程学院",
+		"sex": "女",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 43,
+		"name": "王朝霞",
+		"dept": "物流工程学院",
+		"sex": "女",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 44,
+		"name": "潘洋",
+		"dept": "物流工程学院",
+		"sex": "女",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 45,
+		"name": "周媛",
+		"dept": "信息工程学院",
+		"sex": "女",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 46,
+		"name": "李吉彬",
+		"dept": "信息工程学院",
+		"sex": "男",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 47,
+		"name": "曹利红",
+		"dept": "信息工程学院",
+		"sex": "女",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 48,
 		"name": "刘旻",
 		"dept": "信息工程学院",
 		"sex": "男",
@@ -480,8 +576,32 @@
 		"specialwork": "",
 		"direction": ""
 	}, {
-		"number": 41,
-		"name": "刘旻",
+		"number": 49,
+		"name": "陈敦耀",
+		"dept": "信息工程学院",
+		"sex": "男",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 50,
+		"name": "鲍万松",
+		"dept": "信息工程学院",
+		"sex": "男",
+		"university": "",
+		"class": "",
+		"id":  "",
+		"phone": "",
+		"mobilephone": "",
+		"specialwork": "",
+		"direction": ""
+	}, {
+		"number": 51,
+		"name": "李万秀",
 		"dept": "信息工程学院",
 		"sex": "男",
 		"university": "",

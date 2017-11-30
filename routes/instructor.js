@@ -12,7 +12,7 @@ var router = express.Router();
  * @param {int} file_num - 选取的文件数
  */
 function generateStu(id, file_num) {
-  var stuPath = path.join(__dirname, '../public/images', id);
+  var stuPath = path.join(__dirname, '../public/images/', id);
   console.log(stuPath);
   var stuPhotos = fs.readdirSync(stuPath);
   // fs.readdirSync(stuPath, 'utf8', function (err, files) {

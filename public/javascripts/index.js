@@ -149,7 +149,7 @@ function getJsonLength(json) {
                 $('#gallery li.focus').removeClass('focus hover');
                 var rand = Math.floor(Math.random() * photo_num);
                 $('#gallery li:eq(' + rand + ')').addClass('focus');
-            }, 500);
+            }, 100);
             timer_small = setInterval(function () {
                 // 随机辅导员照片
                 var rand_file = Math.ceil(Math.random() * file_num);
@@ -158,10 +158,10 @@ function getJsonLength(json) {
                 var user_num = parseInt(rand_file) - 1;
                 $('#gallery li:eq(' + rand_pos + ') img').attr('src', '/images/photo/' + rand_file + '.jpg');
                 $('#gallery li:eq(' + rand_pos + ') a').attr('href', '/instructor/' + rand_file);
-                if (user.info[user_num] !== undefined) {
-                    $('#gallery li:eq(' + rand_pos + ') h2').text(users.info[user_num].name);
+                if (users.info[user_num] !== undefined) {
+                    $('#gallery li:eq(' + rand_pos + ') h2').html(users.info[user_num].name);
                 } else {
-                    $('#gallery li:eq(' + rand_pos + ') h2').text('姓名');
+                    $('#gallery li:eq(' + rand_pos + ') h2').html('姓名');
                 }
             }, 1);
         } else {
