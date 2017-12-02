@@ -160,6 +160,8 @@ function generateRand(file_num, photo_row, photo_col) {
         */
     });
 
+    
+
     var timer_big, timer_small;
     // 动画特效
     // var timer_small_slow = setInterval(function () {

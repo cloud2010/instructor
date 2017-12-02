@@ -103,4 +103,6 @@ function errorHandler(err) {
     $('#back').click(function () {
         window.location.href = "/";
     });
+
+    $('#instructor img').fadeIn('slow');
 })();

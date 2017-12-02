@@ -37,11 +37,12 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     min-height: 100%;
     padding: 0;
+    color: #fff;
 }
 
 #logo, #sys, #instructor {
     margin: 0 auto;
-    text-align: center
+    /* text-align: center */
 }
 
 #logo img {
@@ -63,6 +64,17 @@ body {
     font-size: 2em;
     color: #fff;
     display: block
+}
+
+#instructor table img {
+    display: none;
+}
+
+#info {
+    font-size: 1.4em;
+    line-height: 1.8em;
+    width: 50%;
+    margin-top: 1em;
 }
 
 #gallery {
