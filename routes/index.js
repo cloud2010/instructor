@@ -14,8 +14,13 @@ function generateRand(file_num, photo_row, photo_col) {
   var nums = [];
   // 构建索引数组
   for (var i = 1; i <= file_num; i++) {
-    nums.push(i);
+    if (i == 22 || i == 18 || i == 70) {
+      continue;
+    } else {
+      nums.push(i);
+    }
   }
+
   var photos = [];
   for (var i = 0; i < photo_num; i++) {
     // 数组变长（每次有元素剔除）
@@ -31,7 +36,7 @@ function generateRand(file_num, photo_row, photo_col) {
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', {
-    title: '上海海事大学学生处“两随机一公开”系统'
+    title: '学工系统“两随机一公开”工作交流'
   });
 });
 

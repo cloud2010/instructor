@@ -28,6 +28,46 @@ function getJsonLength(json) {
     return jsonLength;
 }
 
+/**
+ * 随机生成人员名单
+ * @param {*} 文件数 
+ * @param {*} 行数 
+ * @param {*} 列数 
+ */
+function generateRand(file_num, photo_row, photo_col) {
+    var photo_num = photo_row * photo_col;
+    var nums = [];
+    // 构建索引数组
+    for (var i = 1; i <= file_num; i++) {
+        if (i == 22 || i == 18 || i == 70) {
+            continue;
+        } else {
+            nums.push(i);
+        }
+    }
+
+    var photos = [],
+        links = [],
+        ids = [];
+    // var links = [];
+    // var ids =[];
+    for (var i = 0; i < photo_num; i++) {
+        // 数组变长（每次有元素剔除）
+        var index = Math.floor(Math.random() * nums.length);
+        // 添加到输出数组
+        photos.push('/images/photo/' + nums[index] + '.jpg');
+        links.push('/instructor/' + nums[index]);
+        ids.push(nums[index] - 1);
+        // 剔除每次已生成随机数的索引位置，保证随机数不重复
+        nums.splice(index, 1);
+    }
+    return {
+        'img': photos,
+        'link': links,
+        'id': ids
+    };
+}
+
 !(function () {
     'use strict';
     // 切换为同步执行(阻塞后续代码)
@@ -121,6 +161,7 @@ function getJsonLength(json) {
     });
 
     var timer_big, timer_small;
+    // 动画特效
     // var timer_small_slow = setInterval(function () {
     //     $('#gallery li:eq(' + Math.ceil(Math.random() * photo_num) + ')')
     //         .addClass('animated bounce')
@@ -151,17 +192,13 @@ function getJsonLength(json) {
                 $('#gallery li:eq(' + rand + ')').addClass('focus');
             }, 100);
             timer_small = setInterval(function () {
-                // 随机辅导员照片
-                var rand_file = Math.ceil(Math.random() * file_num);
-                // 页面随机位置
-                var rand_pos = Math.floor(Math.random() * photo_num);
-                var user_num = parseInt(rand_file) - 1;
-                $('#gallery li:eq(' + rand_pos + ') img').attr('src', '/images/photo/' + rand_file + '.jpg');
-                $('#gallery li:eq(' + rand_pos + ') a').attr('href', '/instructor/' + rand_file);
-                if (users.info[user_num] !== undefined) {
-                    $('#gallery li:eq(' + rand_pos + ') h2').html(users.info[user_num].name);
-                } else {
-                    $('#gallery li:eq(' + rand_pos + ') h2').html('姓名');
+                // 按组随机替换辅导员照片
+                var result = generateRand(file_num, 1, photo_num);
+                for (var i = 0; i < photo_num; i++) {
+                    // 绑定相关数据
+                    $('#gallery li:eq(' + i + ') img').attr('src', result.img[i]);
+                    $('#gallery li:eq(' + i + ') h2').html(users.info[result.id[i]].name);
+                    $('#gallery li:eq(' + i + ') a').attr('href', result.link[i]);
                 }
             }, 1);
         } else {
