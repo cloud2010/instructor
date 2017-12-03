@@ -36,7 +36,7 @@ function generateRand(file_num, photo_row, photo_col) {
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', {
-    title: '学工系统“两随机一公开”工作交流'
+    title: '学工系统“两随机一公开”工作交流大会'
   });
 });
 
