@@ -39,7 +39,7 @@ function generateRand(file_num, photo_row, photo_col) {
     var nums = [];
     // 构建索引数组
     for (var i = 1; i <= file_num; i++) {
-        if (i == 22 || i == 18 || i == 70) {
+        if (i == 18 || i == 68) {
             continue;
         } else {
             nums.push(i);
@@ -92,7 +92,7 @@ function generateRand(file_num, photo_row, photo_col) {
     console.log('随机照片信息:', photos);
 
     // 文件数
-    var file_num = 71;
+    var file_num = 69;
     // 随机照片数组长度
     var photo_num = parseInt(getJsonLength(photos));
     console.log('photo_num=', photo_num);

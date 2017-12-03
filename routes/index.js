@@ -14,7 +14,7 @@ function generateRand(file_num, photo_row, photo_col) {
   var nums = [];
   // 构建索引数组
   for (var i = 1; i <= file_num; i++) {
-    if (i == 22 || i == 18 || i == 70) {
+    if (i == 18 || i == 68) {
       continue;
     } else {
       nums.push(i);
@@ -47,7 +47,7 @@ router.get('/data', function (req, res) {
 
 /* 向客户端响应随机编号 */
 router.get('/rand', function (req, res) {
-  res.send(generateRand(71, 1, 10));
+  res.send(generateRand(69, 1, 10));
 });
 
 module.exports = router;
