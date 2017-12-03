@@ -40,6 +40,13 @@ router.get('/', function (req, res, next) {
   });
 });
 
+/* GET all instructors page. */
+router.get('/all', function (req, res, next) {
+  res.render('all', {
+    title: '所有辅导员信息'
+  });
+});
+
 /* 向客户端响应人员信息 */
 router.get('/data', function (req, res) {
   res.send(instructor_info);
@@ -48,6 +55,20 @@ router.get('/data', function (req, res) {
 /* 向客户端响应随机编号 */
 router.get('/rand', function (req, res) {
   res.send(generateRand(69, 1, 10));
+});
+
+/* 向客户端响应所有照片信息 */
+router.get('/imgs', function (req, res) {
+  var photos = []
+  for (var i = 1; i <= 69; i++) {
+    // 添加到输出数组
+    if (i == 18 || i == 68) {
+      continue;
+    } else {
+      photos.push('/images/photo/' + i + '.jpg');
+    }
+  }
+  res.send(photos);
 });
 
 module.exports = router;

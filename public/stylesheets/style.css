@@ -100,7 +100,7 @@ body {
     perspective: 100px;
     -webkit-perspective: 100px;
     padding: 1px;
-    float: right;
+    float: left;
     position: relative;
     transition: .1s;
     -webkit-transition: 0.1s;

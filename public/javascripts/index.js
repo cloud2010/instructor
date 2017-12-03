@@ -213,5 +213,9 @@ function generateRand(file_num, photo_row, photo_col) {
 
     $('#refresh').click(function () {
         window.location.reload();
-    })
+    });
+
+    $('#all').click(function () {
+        window.location.href = "/all";
+    });
 })();
