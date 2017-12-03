@@ -29,7 +29,7 @@ td {
 
 html {
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
     background: #0f2350;
 }
 
