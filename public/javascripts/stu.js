@@ -100,6 +100,11 @@ function errorHandler(err) {
         }
     });
 
+    $('#gallery li a').click(function (event) {
+        // console.log(event.value);
+        console.log($(this).parent().children('h4').fadeIn('slow'));
+    });
+
     $('#back').click(function () {
         window.location.href = "/";
     });
