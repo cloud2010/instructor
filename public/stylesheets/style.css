@@ -40,7 +40,9 @@ body {
     color: #fff;
 }
 
-#logo, #sys, #instructor {
+#logo,
+#sys,
+#instructor {
     margin: 0 auto;
     /* text-align: center */
 }
@@ -75,6 +77,16 @@ body {
     line-height: 1.5em;
     width: 60%;
     margin-top: 1em;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-collapse: collapse;
+}
+
+#info td {
+    padding-top: 0.4em;
+    padding-left: 0.4em;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
 }
 
 #gallery {
