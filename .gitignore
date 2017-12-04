@@ -1,5 +1,7 @@
 # Photos
 *.jpg
+*.jpeg
+*.png
 *.zip
 *.xls
 # Logs

@@ -62,7 +62,7 @@ router.get('/imgs', function (req, res) {
   var photos = []
   for (var i = 1; i <= 69; i++) {
     // 添加到输出数组
-    if (i == 18 || i == 68) {
+    if (i == 70 || i == 71) {
       continue;
     } else {
       photos.push('/images/photo/' + i + '.jpg');
