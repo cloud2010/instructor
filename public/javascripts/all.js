@@ -28,67 +28,27 @@ function getJsonLength(json) {
     return jsonLength;
 }
 
-/**
- * 随机生成人员名单
- * @param {*} 文件数 
- * @param {*} 行数 
- * @param {*} 列数 
- */
-function generateRand(file_num, photo_row, photo_col) {
-    var photo_num = photo_row * photo_col;
-    var nums = [];
-    // 构建索引数组
-    for (var i = 1; i <= file_num; i++) {
-        if (i == 18 || i == 68) {
-            continue;
-        } else {
-            nums.push(i);
-        }
-    }
-
-    var photos = [],
-        links = [],
-        ids = [];
-    // var links = [];
-    // var ids =[];
-    for (var i = 0; i < photo_num; i++) {
-        // 数组变长（每次有元素剔除）
-        var index = Math.floor(Math.random() * nums.length);
-        // 添加到输出数组
-        photos.push('/images/photo/' + nums[index] + '.jpg');
-        links.push('/instructor/' + nums[index]);
-        ids.push(nums[index] - 1);
-        // 剔除每次已生成随机数的索引位置，保证随机数不重复
-        nums.splice(index, 1);
-    }
-    return {
-        'img': photos,
-        'link': links,
-        'id': ids
-    };
-}
-
 !(function () {
     'use strict';
     //获取随机人员照片信息
     var users = syncJson('/data');
-    var photos = syncJson('/imgs');
+    // var photos = syncJson('/imgs');
 
-    console.log('人员信息:', users.info);
-    console.log('随机照片信息:', photos);
+    console.log('人员信息:', users);
+    // console.log('随机照片信息:', photos);
 
     // 文件数
-    var file_num = 69;
+    // var file_num = 69;
     // 随机照片数组长度
-    var photo_num = parseInt(getJsonLength(photos));
-    console.log('photo_num=', photo_num);
+    // var photo_num = parseInt(getJsonLength(photos));
+    // console.log('photo_num=', photo_num);
 
     var gallery = $('#gallery');
 
     var loadedIndex = 1;
     
-    $.each(users.info, function(i, v) {
-        console.log('Details:', v.number)
+    $.each(users, function(i, v) {
+        // console.log('Details:', v.number)
         var img = document.createElement('img');
         var link = document.createElement('a');
         var li = document.createElement('li');
@@ -110,7 +70,7 @@ function generateRand(file_num, photo_row, photo_col) {
         img.src = '/images/photo/' + v.number + '.jpg';
     })
 
-    $.each(photos, function (index, photo) {
+    // $.each(photos, function (index, photo) {
         // var img = document.createElement('img');
         // var link = document.createElement('a');
         // var li = document.createElement('li');
@@ -145,7 +105,7 @@ function generateRand(file_num, photo_row, photo_col) {
         //     }, 10 * loadedIndex++);
         // };
         // img.src = photo;
-    });
+    // });
 
     $('#back').click(function () {
         window.location.href = "/";

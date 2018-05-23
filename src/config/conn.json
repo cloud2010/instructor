@@ -1,0 +1,5 @@
+{
+  "db": {
+    "conn": "mongodb://10.72.51.130:27017/instructor"
+  }
+}

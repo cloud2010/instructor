@@ -39,7 +39,7 @@ function generateRand(file_num, photo_row, photo_col) {
     var nums = [];
     // 构建索引数组
     for (var i = 1; i <= file_num; i++) {
-        if (i == 18 || i == 68) {
+        if (i == 48 || i == 68) {
             continue;
         } else {
             nums.push(i);
@@ -88,11 +88,11 @@ function generateRand(file_num, photo_row, photo_col) {
     //获取随机人员照片信息
     var photos = syncJson('/rand');
 
-    console.log('人员信息:', users.info);
-    console.log('随机照片信息:', photos);
+    console.log('人员信息:', users);
+    // console.log('随机照片信息:', photos);
 
     // 文件数
-    var file_num = 69;
+    // var file_num = 69;
     // 随机照片数组长度
     var photo_num = parseInt(getJsonLength(photos));
     console.log('photo_num=', photo_num);
@@ -118,8 +118,8 @@ function generateRand(file_num, photo_row, photo_col) {
 
         link.href = '/instructor/' + (user_id + 1);
         // link.target = "_blank";
-        if (users.info[user_id] !== undefined) {
-            h2_name.innerText = users.info[user_id].name;
+        if (users[user_id] !== undefined) {
+            h2_name.innerText = users[user_id].name;
         } else {
             h2_name.innerText = '姓名';
         }
@@ -199,7 +199,7 @@ function generateRand(file_num, photo_row, photo_col) {
                 for (var i = 0; i < photo_num; i++) {
                     // 绑定相关数据
                     $('#gallery li:eq(' + i + ') img').attr('src', result.img[i]);
-                    $('#gallery li:eq(' + i + ') h2').html(users.info[result.id[i]].name);
+                    $('#gallery li:eq(' + i + ') h2').html(users[result.id[i]].name);
                     $('#gallery li:eq(' + i + ') a').attr('href', result.link[i]);
                 }
             }, 1);

@@ -1,30 +1,31 @@
-var express = require('express')
+import { Users } from './db'
+import { Router } from 'express'
 // 读取辅导员信息
-var instructor_info = require('../../public/instructors.json')
-var router = express.Router()
+
+const router = Router()
 
 /**
  * 随机生成人员名单
- * @param {int} file_num - 文件数
- * @param {int} photo_row - 行数
- * @param {int} photo_col - 列数
+ * @param {int} fileNum - 文件数
+ * @param {int} photoRow - 行数
+ * @param {int} photoCol - 列数
  */
-function generateRand (file_num, photo_row, photo_col) {
-  var photo_num = photo_row * photo_col
-  var nums = []
+function generateRand (fileNum, photoRow, photoCol) {
+  let photoNum = photoRow * photoCol
+  let nums = []
   // 构建索引数组
-  for (var i = 1; i <= file_num; i++) {
-    if (i == 18 || i == 68) {
+  for (let i = 1; i <= fileNum; i++) {
+    if (i === 46 || i === 68) {
       continue
     } else {
       nums.push(i)
     }
   }
 
-  var photos = []
-  for (var i = 0; i < photo_num; i++) {
+  let photos = []
+  for (let i = 0; i < photoNum; i++) {
     // 数组变长（每次有元素剔除）
-    var index = Math.floor(Math.random() * nums.length)
+    let index = Math.floor(Math.random() * nums.length)
     // 添加到输出数组
     photos.push('/images/photo/' + nums[index] + '.jpg')
     // 剔除每次已生成随机数的索引位置，保证随机数不重复
@@ -49,7 +50,15 @@ router.get('/all', function (req, res, next) {
 
 /* 向客户端响应人员信息 */
 router.get('/data', function (req, res) {
-  res.send(instructor_info)
+  // res.send(instructorInfo)
+  Users.find({}, {})
+    .then(result => {
+      console.log(`查询全部辅导员信息-${req.path}`)
+      res.json(result)
+    })
+    .catch(errs => {
+      console.log(`查询出错-${errs}`)
+    })
 })
 
 /* 向客户端响应随机编号 */
@@ -62,7 +71,7 @@ router.get('/imgs', function (req, res) {
   var photos = []
   for (var i = 1; i <= 69; i++) {
     // 添加到输出数组
-    if (i == 68 || i == 71) {
+    if (i === 68 || i === 48) {
       continue
     } else {
       photos.push('/images/photo/' + i + '.jpg')
@@ -71,4 +80,4 @@ router.get('/imgs', function (req, res) {
   res.send(photos)
 })
 
-module.exports = router
+export default router
