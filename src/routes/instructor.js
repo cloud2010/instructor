@@ -1,22 +1,22 @@
-var express = require('express');
+var express = require('express')
 // 读取文件操作模块
-var fs = require("fs");
-var path = require('path');
+var fs = require('fs')
+var path = require('path')
 // 读取辅导员信息
-var instructor_info = require('../public/instructors.json');
-var router = express.Router();
+var instructor_info = require('../../public/instructors.json')
+var router = express.Router()
 
 /**
  * 随机选取对应人员的相关照片
- * @param {int} id - 人员ID 
+ * @param {int} id - 人员ID
  * @param {int} file_num - 选取的文件数
  */
-function generateStu(id, file_num) {
-  var stuPath = path.join(__dirname, '../public/images/', id);
-  console.log(stuPath);
-  var stuPhotos = fs.readdirSync(stuPath);
+function generateStu (id, file_num) {
+  var stuPath = path.join(__dirname, '../../public/images/', id)
+  console.log(stuPath)
+  var stuPhotos = fs.readdirSync(stuPath)
 
-  return stuPhotos.slice(0, file_num);
+  return stuPhotos.slice(0, file_num)
 }
 /* GET users listing. */
 router.get('/:id', function (req, res) {
@@ -24,20 +24,20 @@ router.get('/:id', function (req, res) {
   // console.log('get请求参数对象 :', req.query);
   // console.log('post请求参数对象 :', req.body);
   // console.log('q的值为 :', req.params.id);
-  console.log('选中的辅导员信息：', instructor_info.info[req.params.id - 1]);
+  console.log('选中的辅导员信息：', instructor_info.info[req.params.id - 1])
   if (instructor_info.info[req.params.id - 1] !== undefined) {
     // 数据绑定
-    res.render('instructor', instructor_info.info[req.params.id - 1]);
+    res.render('instructor', instructor_info.info[req.params.id - 1])
   } else {
     res.render('instructor', {
       name: '无该辅导员信息',
       dept: '学院'
-    });
+    })
   }
-});
+})
 
 router.get('/stu/:id', function (req, res) {
-  res.send(generateStu(req.params.id, 10));
-});
+  res.send(generateStu(req.params.id, 10))
+})
 
-module.exports = router;
+module.exports = router

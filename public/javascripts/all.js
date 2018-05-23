@@ -86,29 +86,15 @@ function generateRand(file_num, photo_row, photo_col) {
     var gallery = $('#gallery');
 
     var loadedIndex = 1;
-
-    $.each(photos, function (index, photo) {
+    
+    $.each(users.info, function(i, v) {
+        console.log('Details:', v.number)
         var img = document.createElement('img');
         var link = document.createElement('a');
         var li = document.createElement('li');
         var h2_name = document.createElement('h2');
-        // 辅导员ID
-        var user_id = 0;
-        if (photo.length == 20) {
-            // 两位数编号
-            user_id = parseInt(photo.substring(14, 16)) - 1;
-        } else {
-            // 单位数编号
-            user_id = parseInt(photo.substring(14, 15)) - 1;
-        }
-
-        link.href = '/instructor/' + (user_id + 1);
-        // link.target = "_blank";
-        if (users.info[user_id] !== undefined) {
-            h2_name.innerText = users.info[user_id].name;
-        } else {
-            h2_name.innerText = '姓名';
-        }
+        h2_name.innerText = v.name
+        link.href = '/instructor/' + v.number;
         link.appendChild(img);
         li.appendChild(link);
         li.appendChild(h2_name);
@@ -121,7 +107,44 @@ function generateRand(file_num, photo_row, photo_col) {
                 $(li).addClass('loaded');
             }, 10 * loadedIndex++);
         };
-        img.src = photo;
+        img.src = '/images/photo/' + v.number + '.jpg';
+    })
+
+    $.each(photos, function (index, photo) {
+        // var img = document.createElement('img');
+        // var link = document.createElement('a');
+        // var li = document.createElement('li');
+        // var h2_name = document.createElement('h2');
+        // // 辅导员ID
+        // var user_id = 0;
+        // if (photo.length == 20) {
+        //     // 两位数编号
+        //     user_id = parseInt(photo.substring(14, 16)) - 1;
+        // } else {
+        //     // 单位数编号
+        //     user_id = parseInt(photo.substring(14, 15)) - 1;
+        // }
+
+        // link.href = '/instructor/' + (user_id + 1);
+        // // link.target = "_blank";
+        // if (users.info[user_id] !== undefined) {
+        //     h2_name.innerText = users.info[user_id].name;
+        // } else {
+        //     h2_name.innerText = '姓名';
+        // }
+        // link.appendChild(img);
+        // li.appendChild(link);
+        // li.appendChild(h2_name);
+
+        // gallery[0].appendChild(li);
+
+        // img.onload = function (e) {
+        //     img.onload = null;
+        //     setTimeout(function () {
+        //         $(li).addClass('loaded');
+        //     }, 10 * loadedIndex++);
+        // };
+        // img.src = photo;
     });
 
     $('#back').click(function () {
