@@ -10,7 +10,8 @@
 		"extra": "无 / 分机:38282969",
 		"mobilephone": "13918428313",
 		"specialwork": "团委",
-		"direction": "国防与安全教育"
+		"direction": "国防与安全教育",
+		"weight": 10
 	}, {
 		"number": 2,
 		"name": "卢三平",
@@ -22,7 +23,8 @@
 		"extra": "无 / 分机:3828918",
 		"mobilephone": "13918847001",
 		"specialwork": "社区",
-		"direction": "党团建设"
+		"direction": "党团建设",
+		"weight": 10
 	}, {
 		"number": 3,
 		"name": "房玲",
@@ -34,7 +36,8 @@
 		"extra": "无 / 分机:38283385",
 		"mobilephone": "13564334878",
 		"specialwork": "心理",
-		"direction": "心理健康教育与咨询"
+		"direction": "心理健康教育与咨询",
+		"weight": 10
 	}, {
 		"number": 4,
 		"name": "江小林",
@@ -46,7 +49,8 @@
 		"extra": "无 / 分机:38282919",
 		"mobilephone": "13564518262",
 		"specialwork": "形势与政策",
-		"direction": "形势政策教育"
+		"direction": "形势政策教育",
+		"weight": 10
 	}, {
 		"number": 6,
 		"name": "黄晔",
@@ -58,7 +62,8 @@
 		"extra": "无 / 分机:38282919",
 		"mobilephone": "13816425131",
 		"specialwork": "科创",
-		"direction": "创新创业"
+		"direction": "创新创业",
+		"weight": 10
 	}, {
 		"number": 7,
 		"name": "任胜超",
@@ -70,7 +75,8 @@
 		"extra": "无 / 分机:38282918",
 		"mobilephone": "13671701368",
 		"specialwork": "党建",
-		"direction": "党团建设"
+		"direction": "党团建设",
+		"weight": 10
 	}, {
 		"number": 8,
 		"name": "丘烨",
@@ -79,10 +85,11 @@
 		"university": "上海海事大学 轮机工程",
 		"classes": "轮机151-158，船电151-152",
 		"id": "114924",
-		"extra": "无 / 分机:38283369",
+		"extra": "航行实习 / 分机:38283369",
 		"mobilephone": "13818009587",
 		"specialwork": "贷款",
-		"direction": "资助育人"
+		"direction": "资助育人",
+		"weight": 10
 	}, {
 		"number": 9,
 		"name": "钱继成",
@@ -94,7 +101,8 @@
 		"extra": "无 / 分机:38283369",
 		"mobilephone": "15216770307",
 		"specialwork": "易班",
-		"direction": "职业生涯发展规划"
+		"direction": "职业生涯发展规划",
+		"weight": 10
 	}, {
 		"number": 10,
 		"name": "吴长越",
@@ -103,10 +111,11 @@
 		"university": "上海海事大学 交通运输工程 硕士",
 		"classes": "航海141-1410，共312人",
 		"id": "165283",
-		"extra": "无 / 分机:38282918",
+		"extra": "2017年12月已上台 / 分机:38282918",
 		"mobilephone": "18801908789",
 		"specialwork": "学风",
-		"direction": "学业指导"
+		"direction": "学业指导",
+		"weight": 10
 	}, {
 		"number": 11,
 		"name": "徐善凯",
@@ -118,7 +127,8 @@
 		"extra": "无 / 分机:38282918",
 		"mobilephone": "18817565960",
 		"specialwork": "",
-		"direction": "国防与安全教育"
+		"direction": "国防与安全教育",
+		"weight": 10
 	}, {
 		"number": 12,
 		"name": "马丁",
@@ -130,7 +140,8 @@
 		"extra": "无 / 分机:38282918",
 		"mobilephone": "18817575705",
 		"specialwork": "",
-		"direction": "就业指导"
+		"direction": "就业指导",
+		"weight": 10
 	}, {
 		"number": 13,
 		"name": "朱红红",
@@ -142,7 +153,8 @@
 		"extra": "无 / 分机:38282310",
 		"mobilephone": "13524622033",
 		"specialwork": "学风",
-		"direction": "职业教育"
+		"direction": "职业教育",
+		"weight": 10
 	}, {
 		"number": 14,
 		"name": "张伟磐",
@@ -151,10 +163,11 @@
 		"university": "上海海事大学交通工程",
 		"classes": "",
 		"id": "135024",
-		"extra": "无 / 分机:38282310",
+		"extra": "航行实习 / 分机:38282310",
 		"mobilephone": "13764354480",
 		"specialwork": "",
-		"direction": ""
+		"direction": "",
+		"weight": 10
 	}, {
 		"number": 15,
 		"name": "陈莉",
@@ -166,7 +179,8 @@
 		"extra": "无 / 分机:38282310",
 		"mobilephone": "13818924506",
 		"specialwork": "资助",
-		"direction": "职业教育"
+		"direction": "职业教育",
+		"weight": 10
 	}, {
 		"number": 16,
 		"name": "都志亮",
@@ -178,19 +192,21 @@
 		"extra": "无 / 分机:38282310",
 		"mobilephone": "15216788616",
 		"specialwork": "招生宣传、青年协会",
-		"direction": "就业辅导"
+		"direction": "就业辅导",
+		"weight": 10
 	}, {
 		"number": 17,
 		"name": "刘建",
 		"dept": "交通运输学院",
 		"sex": "男",
 		"university": "上海海事大学",
-		"classes": "交运大类、物流管理17级",
+		"classes": "不带班",
 		"id": "053994",
 		"extra": "无 / 分机:38282370",
 		"mobilephone": "13764575786",
 		"specialwork": "团委",
-		"direction": "职业教育"
+		"direction": "职业教育",
+		"weight": 10
 	}, {
 		"number": 18,
 		"name": "范晓云",
@@ -199,10 +215,11 @@
 		"university": "华东师范大学世界史",
 		"classes": "交运、交工15级 共193人",
 		"id": "084605",
-		"extra": "同济大学培训 / 分机:38282357",
+		"extra": "无 / 分机:38282357",
 		"mobilephone": "13601912117",
 		"specialwork": "奖学金、少数民族",
-		"direction": "职业教育"
+		"direction": "职业教育",
+		"weight": 10
 	}, {
 		"number": 19,
 		"name": "陈祯如",
@@ -214,7 +231,8 @@
 		"extra": "无 / 分机:38282357",
 		"mobilephone": "15802120788",
 		"specialwork": "就业",
-		"direction": "职业教育"
+		"direction": "职业教育",
+		"weight": 15
 	}, {
 		"number": 20,
 		"name": "黄大为",
@@ -226,7 +244,8 @@
 		"extra": "无 / 分机:38282357",
 		"mobilephone": "18801909714",
 		"specialwork": "党建",
-		"direction": "职业教育"
+		"direction": "职业教育",
+		"weight": 10
 	}, {
 		"number": 21,
 		"name": "郑巧",
@@ -238,7 +257,8 @@
 		"extra": "无 / 分机:38282414",
 		"mobilephone": "13564589324",
 		"specialwork": "就业专项",
-		"direction": "就业指导"
+		"direction": "就业指导",
+		"weight": 10
 	}, {
 		"number": 22,
 		"name": "马卉",
@@ -250,7 +270,8 @@
 		"extra": "无 / 分机:38282415",
 		"mobilephone": "13817959117",
 		"specialwork": "党建工作",
-		"direction": "党团建设"
+		"direction": "党团建设",
+		"weight": 10
 	}, {
 		"number": 23,
 		"name": "马士群",
@@ -262,7 +283,8 @@
 		"extra": "无 / 分机:38282411",
 		"mobilephone": "13585942940",
 		"specialwork": "学工组长、少数民族学生工作",
-		"direction": "国防与安全教育"
+		"direction": "国防与安全教育",
+		"weight": 10
 	}, {
 		"number": 24,
 		"name": "陈倩",
@@ -274,7 +296,8 @@
 		"extra": "无 / 分机:38282411",
 		"mobilephone": "13774212881",
 		"specialwork": "团委副书记、社区工作",
-		"direction": "党团建设"
+		"direction": "党团建设",
+		"weight": 10
 	}, {
 		"number": 26,
 		"name": "李毅",
@@ -286,7 +309,8 @@
 		"extra": "无 / 分机:38282412",
 		"mobilephone": "15216771235",
 		"specialwork": "网络思政(易班、@辅导员等信息化建设)",
-		"direction": "网络思想政治教育"
+		"direction": "网络思想政治教育",
+		"weight": 10
 	}, {
 		"number": 27,
 		"name": "汤朱健",
@@ -298,7 +322,8 @@
 		"extra": "无 / 分机:38282412",
 		"mobilephone": "15900861775",
 		"specialwork": "党建专项、工会",
-		"direction": "学业指导"
+		"direction": "学业指导",
+		"weight": 10
 	}, {
 		"number": 28,
 		"name": "马莉艳",
@@ -310,7 +335,8 @@
 		"extra": "无 / 分机:38282412",
 		"mobilephone": "13524407059",
 		"specialwork": "学风建设（偏数据统计）",
-		"direction": "学业指导"
+		"direction": "学业指导",
+		"weight": 10
 	}, {
 		"number": 29,
 		"name": "祝海宇",
@@ -322,7 +348,8 @@
 		"extra": "无 / 分机:38282413",
 		"mobilephone": "13817034899",
 		"specialwork": "奖助学金、贫困生、贷款",
-		"direction": "资助育人"
+		"direction": "资助育人",
+		"weight": 10
 	}, {
 		"number": 30,
 		"name": "姚昌",
@@ -334,7 +361,8 @@
 		"extra": "无 / 分机:38282413",
 		"mobilephone": "18521051863",
 		"specialwork": "学风建设（偏队伍建设）,协助学导工作",
-		"direction": "国防与安全教育"
+		"direction": "国防与安全教育",
+		"weight": 10
 	}, {
 		"number": 31,
 		"name": "杨娜",
@@ -346,19 +374,21 @@
 		"extra": "无 / 分机:38282413",
 		"mobilephone": "17765171718",
 		"specialwork": "协助积极分子培训<哲学社会科学导论>，及学生骨干培训<星辰计划>",
-		"direction": "人文思政"
+		"direction": "人文思政",
+		"weight": 10
 	}, {
 		"number": 32,
 		"name": "赵大为",
 		"dept": "经济管理学院",
 		"sex": "男",
 		"university": "上海海事大学/经济学",
-		"classes": "团委书记（学生自组织、党委宣传委员）共计",
+		"classes": "团委书记（学生自组织、党委宣传委员）",
 		"id": "064372",
 		"extra": "不带班 / 分机:38282410",
 		"mobilephone": "13818582007",
 		"specialwork": "团委工作",
-		"direction": "创新创业"
+		"direction": "创新创业",
+		"weight": 10
 	}, {
 		"number": 33,
 		"name": "郑瑞环",
@@ -370,19 +400,21 @@
 		"extra": "无 / 分机:38282610",
 		"mobilephone": "15900522362",
 		"specialwork": "就业",
-		"direction": "网络思想政治教育"
+		"direction": "网络思想政治教育",
+		"weight": 10
 	}, {
 		"number": 34,
 		"name": "任阳",
 		"dept": "物流工程学院",
 		"sex": "男",
 		"university": "上海大学、世界史、硕士",
-		"classes": "机械171-174，工物171-174，共287人",
+		"classes": "机械171-174，工物171-174，共286人",
 		"id": "",
 		"extra": "无 / 分机:38282610",
 		"mobilephone": "18721871262",
 		"specialwork": "党建",
-		"direction": "国防安全与教育"
+		"direction": "国防安全与教育",
+		"weight": 10
 	}, {
 		"number": 35,
 		"name": "杨鸣",
@@ -391,34 +423,37 @@
 		"university": "上海海事大学、电力电子与电力传动、硕士",
 		"classes": "电气161—电气166,213人",
 		"id": "043834",
-		"extra": "无 / 分机:38282655",
+		"extra": "2017年12月已上台 / 分机:38282655",
 		"mobilephone": "13585867878",
 		"specialwork": "易班，团委",
-		"direction": "网络思想政治教育"
+		"direction": "网络思想政治教育",
+		"weight": 10
 	}, {
 		"number": 36,
 		"name": "孟浩天",
 		"dept": "物流工程学院",
 		"sex": "男",
 		"university": "中国矿业大学、安全工程、硕士",
-		"classes": "港机161、机械161、机械162、机械163、机械164、工业161、工业162、工物161、工物162，共283人",
+		"classes": "港机161、机械161、机械162、机械163、机械164、工业161、工业162、工物161、工物162，共282人",
 		"id": "165262",
 		"extra": "无 / 分机:38282610",
 		"mobilephone": "18221165817",
 		"specialwork": "资助",
-		"direction": "创新创业"
+		"direction": "创新创业",
+		"weight": 10
 	}, {
 		"number": 37,
 		"name": "刘宏伟",
 		"dept": "物流工程学院",
 		"sex": "男",
 		"university": "上海海事大学、港口海岸与近海工程、硕士",
-		"classes": "机械151-154，工业151、工业152，工物151、工物152，港机151，共283人",
+		"classes": "机械151-154，工业151、工业152，工物151、工物152，港机151，共288人",
 		"id": "175347",
 		"extra": "入职培训 / 分机:38282653",
 		"mobilephone": "18817386559",
 		"specialwork": "少数民族统战",
-		"direction": "网络思想政治教育"
+		"direction": "网络思想政治教育",
+		"weight": 10
 	}, {
 		"number": 38,
 		"name": "刘一飞",
@@ -427,22 +462,24 @@
 		"university": "华东师范大学、政治学理论、博士",
 		"classes": "电气151、152、153，自动化151、152，测控151，共198人",
 		"id": "043816",
-		"extra": "无 / 分机:38282610",
+		"extra": "2017年12月已上台 / 分机:38282610",
 		"mobilephone": "13641936521",
 		"specialwork": "心理",
-		"direction": "心理健康教育与咨询"
+		"direction": "心理健康教育与咨询",
+		"weight": 10
 	}, {
 		"number": 39,
 		"name": "万永刚",
 		"dept": "物流工程学院",
 		"sex": "男",
 		"university": "华东师范大学、科学技术史、硕士",
-		"classes": "电气141、142、143，自动化141、142，测控141，机械141、142、143、144，机电141，工业141、142，工物141、142，电气161专、162专，共659人",
+		"classes": "电气141、142、143，自动化141、142，测控141，机械141、142、143、144，机电141，工业141、142，工物141、142，电气161专、162专，共660人",
 		"id": "054293",
 		"extra": "无 / 分机:38282610",
 		"mobilephone": "18721844191",
 		"specialwork": "招生",
-		"direction": "国防与安全教育"
+		"direction": "国防与安全教育",
+		"weight": 10
 	}, {
 		"number": 40,
 		"name": "包艳",
@@ -454,7 +491,8 @@
 		"extra": "休产假 / 分机:38282653",
 		"mobilephone": "13917825495",
 		"specialwork": "学风",
-		"direction": "学风建设"
+		"direction": "学风建设",
+		"weight": 10
 	}, {
 		"number": 41,
 		"name": "王朝霞",
@@ -463,10 +501,11 @@
 		"university": "上海海事大学、机械工程、硕士",
 		"classes": "机电荷161、机电荷162、电控荷161、电控荷162、机电荷141、机电荷142、电控荷141、电控荷142，共282人",
 		"id": "094707",
-		"extra": "无 / 分机:38282653",
+		"extra": "2017年12月已上台 / 分机:38282653",
 		"mobilephone": "13764478040",
 		"specialwork": "党建",
-		"direction": "网络思想政治教育"
+		"direction": "网络思想政治教育",
+		"weight": 10
 	}, {
 		"number": 42,
 		"name": "潘洋",
@@ -475,34 +514,37 @@
 		"university": "同济大学、机械设计及理论、博士",
 		"classes": "硕士研究生（415人），博士研究生（50人）",
 		"id": "023500",
-		"extra": "无 / 分机:38282655",
+		"extra": "2017年12月已上台 / 分机:38282655",
 		"mobilephone": "13818196324",
 		"specialwork": "研究生工作",
-		"direction": "创新创业"
+		"direction": "创新创业",
+		"weight": 10
 	}, {
 		"number": 43,
 		"name": "周媛",
 		"dept": "信息工程学院",
 		"sex": "女",
 		"university": "上海海事大学信息工程学院通信与信息系统",
-		"classes": "电信141-142，网络141-142，通信141-143，共227人",
+		"classes": "电信141-142，网络141-142，通信141-143，共240人",
 		"id": "074444",
-		"extra": "无 / 分机:38282810",
+		"extra": "2017年12月已上台 / 分机:38282810",
 		"mobilephone": "13761057344",
 		"specialwork": "心理",
-		"direction": "网络思政"
+		"direction": "网络思政",
+		"weight": 10
 	}, {
 		"number": 44,
 		"name": "李吉彬",
 		"dept": "信息工程学院",
 		"sex": "男",
 		"university": "哈尔滨工程大学法学",
-		"classes": "计算机大类171-178班，共计八个班266人",
+		"classes": "计算机大类171-178班，共计八个班267人",
 		"id": "074453",
-		"extra": "上海高校“十九大”宣讲团 / 分机:38282810",
+		"extra": "无 / 分机:38282810",
 		"mobilephone": "13816551569",
 		"specialwork": "学风建设",
-		"direction": "心理健康教育与咨询"
+		"direction": "心理健康教育与咨询",
+		"weight": 10
 	}, {
 		"number": 45,
 		"name": "曹利红",
@@ -513,44 +555,48 @@
 		"id": "104827",
 		"extra": "分机:38282813",
 		"mobilephone": "13817361153",
-		"specialwork": "",
-		"direction": ""
+		"specialwork": "学生党建",
+		"direction": "心理健康教育与咨询",
+		"weight": 10
 	}, {
 		"number": 46,
 		"name": "刘旻",
 		"dept": "信息工程学院",
 		"sex": "男",
 		"university": "上海海事大学 计算机应用技术",
-		"classes": "16级研究生（165人）17级研究生（204人）博士生（18人）",
+		"classes": "16级研究生（169人）17级研究生（206人）博士生（12人）",
 		"id": "114929",
 		"extra": "无 / 分机:38282812",
 		"mobilephone": "13916098044",
 		"specialwork": "研究生就业、易班",
-		"direction": "心理健康教育与咨询、研究生科创"
+		"direction": "心理健康教育与咨询",
+		"weight": 10
 	}, {
 		"number": 48,
 		"name": "鲍万松",
 		"dept": "信息工程学院",
 		"sex": "男",
 		"university": "上海海事大学信息工程学院计算机技术",
-		"classes": "计算机141-143、信息141-143，共207人",
+		"classes": "计算机141-143、信息141-143，共194人",
 		"id": "953415",
 		"extra": "无 / 分机:38282813",
 		"mobilephone": "13524563945",
 		"specialwork": "征兵、少数民族学生工作",
-		"direction": "国防与安全教育"
+		"direction": "国防与安全教育",
+		"weight": 10
 	}, {
 		"number": 49,
 		"name": "李万秀",
 		"dept": "信息工程学院",
 		"sex": "男",
 		"university": "上海海事大学信息管理与信息系统",
-		"classes": "电信161-162，通信161-163，共168人",
+		"classes": "电信161-162，通信161-163，共169人",
 		"id": "953547",
 		"extra": "无 / 分机:38282810",
 		"mobilephone": "18201722570",
 		"specialwork": "就业、校友",
-		"direction": "国防与安全教育"
+		"direction": "国防与安全教育",
+		"weight": 10
 	}, {
 		"number": 50,
 		"name": "郑思思",
@@ -559,10 +605,11 @@
 		"university": "上海海事大学、交通运输工程",
 		"classes": "文理学院2016级本科",
 		"id": "043913",
-		"extra": "休产假 / 分机:38282212",
+		"extra": "无 / 分机:38282212",
 		"mobilephone": "13917790080",
 		"specialwork": "心理健康教育、党建",
-		"direction": "心理健康教育、党建"
+		"direction": "心理健康教育、党建",
+		"weight": 10
 	}, {
 		"number": 51,
 		"name": "漆勇",
@@ -571,10 +618,11 @@
 		"university": "江南大学",
 		"classes": "文理学院2014级本科",
 		"id": "084593",
-		"extra": "无 / 分机:38282212",
+		"extra": "无 / 分机:38282210",
 		"mobilephone": "15121026535",
 		"specialwork": "就业、资助",
-		"direction": "形势与政策教育"
+		"direction": "形势与政策教育",
+		"weight": 10
 	}, {
 		"number": 52,
 		"name": "杨志伟",
@@ -583,10 +631,11 @@
 		"university": "清华大学、高等教育学、教育学硕士",
 		"classes": "文理学院2017级本科",
 		"id": "064351",
-		"extra": "休产假 / 分机:38282210",
+		"extra": "无 / 分机:38282210",
 		"mobilephone": "13917683154",
 		"specialwork": "心理、思想政治教育",
-		"direction": "形势与政策教育"
+		"direction": "形势与政策教育",
+		"weight": 10
 	}, {
 		"number": 54,
 		"name": "黄以青",
@@ -598,7 +647,8 @@
 		"extra": "无 / 分机:38282710",
 		"mobilephone": "13917712810",
 		"specialwork": "团学、学风、资助",
-		"direction": "党团建设"
+		"direction": "党团建设",
+		"weight": 10
 	}, {
 		"number": 55,
 		"name": "欧阳曙",
@@ -607,10 +657,11 @@
 		"university": "华东师范大学，思政，法学博士",
 		"classes": "英航141，英航142，英译141，英译142，英商141，英译142，日语141，日语",
 		"id": "033632",
-		"extra": "无 / 分机:38282753",
+		"extra": "2017年12月已上台 / 分机:38282753",
 		"mobilephone": "13816880766",
 		"specialwork": "党建、就业工作",
-		"direction": "党团建设"
+		"direction": "党团建设",
+		"weight": 10
 	}, {
 		"number": 56,
 		"name": "孙玉敏",
@@ -622,7 +673,8 @@
 		"extra": "无 / 分机:38282751",
 		"mobilephone": "18721341621",
 		"specialwork": "心理、易班",
-		"direction": "创新与创业教育"
+		"direction": "创新与创业教育",
+		"weight": 10
 	}, {
 		"number": 57,
 		"name": "孙志宽",
@@ -634,7 +686,8 @@
 		"extra": "无 / 分机:38282711",
 		"mobilephone": "15216770172",
 		"specialwork": "社区",
-		"direction": "社区党建"
+		"direction": "社区党建",
+		"weight": 10
 	}, {
 		"number": 58,
 		"name": "黄寅",
@@ -643,10 +696,11 @@
 		"university": "上海海事大学、港口海岸及近海工程、硕士",
 		"classes": "海科研究生，150人",
 		"id": "104791",
-		"extra": "无 / 分机:38282510",
+		"extra": "2017年12月已上台 / 分机:38282510",
 		"mobilephone": "18801909599",
 		"specialwork": "资助",
-		"direction": "人文思政"
+		"direction": "人文思政",
+		"weight": 10
 	}, {
 		"number": 59,
 		"name": "何海波",
@@ -658,7 +712,8 @@
 		"extra": "团委挂职 / 分机:38282532",
 		"mobilephone": "18201721693",
 		"specialwork": "学生党建",
-		"direction": "党团建设与组织育人"
+		"direction": "党团建设与组织育人",
+		"weight": 10
 	}, {
 		"number": 60,
 		"name": "杨芳梅",
@@ -667,10 +722,11 @@
 		"university": "上海海事大学 国际贸易管理、 硕士",
 		"classes": "港航141/142/143；船舶141/142；环境141；安全141/142；材料141/142，共347人",
 		"id": "114887",
-		"extra": "无 / 分机:38282510",
+		"extra": "团委书记 / 分机:38282510",
 		"mobilephone": "13918389265",
 		"specialwork": "学院团委/心理健康教育/社团指导",
-		"direction": "职业生涯规划"
+		"direction": "职业生涯规划",
+		"weight": 10
 	}, {
 		"number": 61,
 		"name": "姚均东",
@@ -682,7 +738,8 @@
 		"extra": "无 / 分机:38282510",
 		"mobilephone": "15216770322",
 		"specialwork": "招生、就业",
-		"direction": "就业指导"
+		"direction": "就业指导",
+		"weight": 10
 	}, {
 		"number": 62,
 		"name": "陈云龙",
@@ -694,7 +751,8 @@
 		"extra": "无 / 分机:38282532",
 		"mobilephone": "18394019082",
 		"specialwork": "社区、征兵、易班、社团指导、工作研究",
-		"direction": "人文思政"
+		"direction": "人文思政",
+		"weight": 10
 	}, {
 		"number": 63,
 		"name": "卓沁洁",
@@ -706,7 +764,8 @@
 		"extra": "分机:38282532",
 		"mobilephone": "18608418165",
 		"specialwork": "社区、学风建设",
-		"direction": "人文思政"
+		"direction": "人文思政",
+		"weight": 10
 	}, {
 		"number": 64,
 		"name": "邢卓",
@@ -718,7 +777,8 @@
 		"extra": "无 / 分机:38282180",
 		"mobilephone": "13917608674",
 		"specialwork": "就业",
-		"direction": "心理健康教育与咨询"
+		"direction": "心理健康教育与咨询",
+		"weight": 10
 	}, {
 		"number": 65,
 		"name": "张晟",
@@ -730,7 +790,8 @@
 		"extra": "无 / 分机:38282140",
 		"mobilephone": "18817579457",
 		"specialwork": "宣传、汇总",
-		"direction": "网络思想政治教育"
+		"direction": "网络思想政治教育",
+		"weight": 10
 	}, {
 		"number": 66,
 		"name": "吴志毅",
@@ -742,7 +803,8 @@
 		"extra": "无 / 分机:38282141",
 		"mobilephone": "13774245292",
 		"specialwork": "党建",
-		"direction": "党团建设与组织育人"
+		"direction": "党团建设与组织育人",
+		"weight": 10
 	}, {
 		"number": 67,
 		"name": "刘直",
@@ -754,30 +816,20 @@
 		"extra": "无 / 分机:38282176",
 		"mobilephone": "13651936101",
 		"specialwork": "学风、团委",
-		"direction": "创新创业"
+		"direction": "创新创业",
+		"weight": 10
 	}, {
 		"number": 68,
 		"name": "佟阳",
 		"dept": "法学院",
 		"sex": "女",
 		"university": "上海海事大学国际法学硕士",
-		"classes": "博士研究生和非全日制研究生，50人",
+		"classes": "休产假 / 博士研究生和非全日制研究生，50人",
 		"id": "084563",
 		"extra": "分机:38282141",
 		"mobilephone": "13601675446",
 		"specialwork": "",
-		"direction": ""
-	}, {
-		"number": 69,
-		"name": "贾秀群",
-		"dept": "物流科学与工程研究院",
-		"sex": "男",
-		"university": "上海海事大学、机械电子工程、硕士",
-		"classes": "物流科学与工程研究院研究生（319）",
-		"id": "124987",
-		"extra": "无 / 分机:38284600",
-		"mobilephone": "13761765149",
-		"specialwork": "党建、就业、心理、资助",
-		"direction": "心理健康教育与咨询"
+		"direction": "",
+		"weight": 10
 	}]
 }
