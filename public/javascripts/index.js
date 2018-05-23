@@ -85,41 +85,42 @@ function generateRand(file_num, photo_row, photo_col) {
     //匿名函数ajax同步执行先加载完数据
     var users = syncJson('/data');
 
-    //获取随机人员照片信息
-    var photos = syncJson('/rand');
+    //获取随机人员照片信息及姓名
+    var userinfos = syncJson('/rand');
 
-    console.log('人员信息:', users);
+    // console.log('人员信息:', users);
     // console.log('随机照片信息:', photos);
 
     // 文件数
-    // var file_num = 69;
+    var file_num = 68;
     // 随机照片数组长度
-    var photo_num = parseInt(getJsonLength(photos));
+    var photo_num = userinfos.imgs.length;
     console.log('photo_num=', photo_num);
 
     var gallery = $('#gallery');
 
     var loadedIndex = 1;
 
-    $.each(photos, function (index, photo) {
+    $.each(userinfos.imgs, function (index, item) {
         var img = document.createElement('img');
         var link = document.createElement('a');
         var li = document.createElement('li');
         var h2_name = document.createElement('h2');
-        // 辅导员ID
-        var user_id = 0;
-        if (photo.length == 20) {
-            // 两位数编号
-            user_id = parseInt(photo.substring(14, 16)) - 1;
-        } else {
-            // 单位数编号
-            user_id = parseInt(photo.substring(14, 15)) - 1;
-        }
 
-        link.href = '/instructor/' + (user_id + 1);
+        // if (item.length == 20) {
+        //     // 两位数编号
+        //     user_id = parseInt(item.substring(14, 16));
+        // } else {
+        //     // 单位数编号
+        //     user_id = parseInt(item.substring(14, 15));
+        // }
+
+        // 辅导员ID
+        var user_id = userinfos.nums[index];
+        link.href = '/instructor/' + user_id;
         // link.target = "_blank";
-        if (users[user_id] !== undefined) {
-            h2_name.innerText = users[user_id].name;
+        if (userinfos.unames[index] !== undefined) {
+            h2_name.innerText = userinfos.unames[index];
         } else {
             h2_name.innerText = '姓名';
         }
@@ -136,7 +137,7 @@ function generateRand(file_num, photo_row, photo_col) {
             }, 10 * loadedIndex++);
         };
 
-        img.src = photo;
+        img.src = item;
 
         /* 此方式会将重复图片连在一起输出
         var img = document.createElement('img');
@@ -160,7 +161,7 @@ function generateRand(file_num, photo_row, photo_col) {
         */
     });
 
-    
+
 
     var timer_big, timer_small;
     // 动画特效
@@ -204,8 +205,39 @@ function generateRand(file_num, photo_row, photo_col) {
                 }
             }, 1);
         } else {
+            $('#gallery li').remove()
             $(this).data('action', 'start').html('开始');
-            $('#gallery li.focus').addClass('hover');
+            
+            //获取随机人员照片信息及姓名
+            var userinfos = syncJson('/rand');
+            var loadedIndex = 1;
+            $.each(userinfos.imgs, function (index, item) {
+                var img = document.createElement('img');
+                var link = document.createElement('a');
+                var li = document.createElement('li');
+                var h2_name = document.createElement('h2');
+                var user_id = userinfos.nums[index];
+                link.href = '/instructor/' + user_id;
+                // link.target = "_blank";
+                if (userinfos.unames[index] !== undefined) {
+                    h2_name.innerText = userinfos.unames[index];
+                } else {
+                    h2_name.innerText = '姓名';
+                }
+                link.appendChild(img);
+                li.appendChild(link);
+                li.appendChild(h2_name);
+                gallery[0].appendChild(li);
+                img.onload = function (e) {
+                    img.onload = null;
+                    setTimeout(function () {
+                        $(li).addClass('loaded');
+                    }, 10 * loadedIndex++);
+                };
+                img.src = item;
+            })
+            // 幸运儿悬浮显示
+            $('#gallery h2:contains(' + userinfos.one + ')').parent().addClass('hover focus');
             clearInterval(timer_big);
             clearInterval(timer_small);
         }

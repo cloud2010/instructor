@@ -1,8 +1,28 @@
 import { Users } from './db'
 import { Router } from 'express'
-// 读取辅导员信息
-
+import Chance from 'chance'
+// 读取辅导员编号和权重信息
+const iUsers = []
+const wUsers = []
+const nUsers = []
+// 生成随机索引集合
+const rIndex = Array.from(new Array(64), (val, index) => index)
+Users.find({}, {number: true, weight: true, name: true})
+  .sort({number: 1})
+  .then((items) => {
+    items.forEach((item) => {
+      iUsers.push(item.number)
+      wUsers.push(item.weight)
+      nUsers.push(item.name)
+    }
+    )
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 const router = Router()
+// 随机数生成库
+const chance = new Chance()
 
 /**
  * 随机生成人员名单
@@ -12,30 +32,34 @@ const router = Router()
  */
 function generateRand (fileNum, photoRow, photoCol) {
   let photoNum = photoRow * photoCol
-  let nums = []
-  // 构建索引数组
-  for (let i = 1; i <= fileNum; i++) {
-    if (i === 46 || i === 68) {
-      continue
-    } else {
-      nums.push(i)
-    }
-  }
+  // 根据权重生成指定个数的抽样人员
+  // let rand = chance.n(chance.weighted, photoNum, iUsers, wUsers)
 
+  let rand = chance.pickset(rIndex, photoNum)
   let photos = []
-  for (let i = 0; i < photoNum; i++) {
-    // 数组变长（每次有元素剔除）
-    let index = Math.floor(Math.random() * nums.length)
-    // 添加到输出数组
-    photos.push('/images/photo/' + nums[index] + '.jpg')
-    // 剔除每次已生成随机数的索引位置，保证随机数不重复
-    nums.splice(index, 1)
-  }
-  return photos
+  let names = []
+  let ids = []
+  let weights = []
+  rand.forEach((item) => {
+    photos.push('/images/photo/' + iUsers[item] + '.jpg')
+    names.push(nUsers[item])
+    ids.push(iUsers[item])
+    weights.push(wUsers[item])
+  })
+  // 幸运儿
+  let lucky = chance.weighted(names, weights)
+  // console.log(photos)
+  // console.log(names)
+  console.log(lucky)
+  return {imgs: photos, unames: names, nums: ids, one: lucky}
 }
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+  // console.log(rand)
+  // console.log(iUsers)
+  // console.log(nUsers)
+  console.log('人员个数：', iUsers.length)
   res.render('index', {
     title: '学工系统“两随机一公开”工作交流大会'
   })
@@ -52,6 +76,7 @@ router.get('/all', function (req, res, next) {
 router.get('/data', function (req, res) {
   // res.send(instructorInfo)
   Users.find({}, {})
+    .sort({number: 1})
     .then(result => {
       console.log(`查询全部辅导员信息-${req.path}`)
       res.json(result)
@@ -63,21 +88,21 @@ router.get('/data', function (req, res) {
 
 /* 向客户端响应随机编号 */
 router.get('/rand', function (req, res) {
-  res.send(generateRand(69, 1, 10))
+  res.json(generateRand(iUsers.length, 1, 10))
 })
 
 /* 向客户端响应所有照片信息 */
-router.get('/imgs', function (req, res) {
-  var photos = []
-  for (var i = 1; i <= 69; i++) {
-    // 添加到输出数组
-    if (i === 68 || i === 48) {
-      continue
-    } else {
-      photos.push('/images/photo/' + i + '.jpg')
-    }
-  }
-  res.send(photos)
-})
+// router.get('/imgs', function (req, res) {
+//   var photos = []
+//   for (var i = 1; i <= 69; i++) {
+//     // 添加到输出数组
+//     if (i === 68 || i === 48) {
+//       continue
+//     } else {
+//       photos.push('/images/photo/' + i + '.jpg')
+//     }
+//   }
+//   res.send(photos)
+// })
 
 export default router
