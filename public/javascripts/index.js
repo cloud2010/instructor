@@ -39,11 +39,7 @@ function generateRand(file_num, photo_row, photo_col) {
     var nums = [];
     // 构建索引数组
     for (var i = 1; i <= file_num; i++) {
-        if (i == 48 || i == 68) {
-            continue;
-        } else {
-            nums.push(i);
-        }
+        nums.push(i);
     }
 
     var photos = [],
@@ -92,7 +88,7 @@ function generateRand(file_num, photo_row, photo_col) {
     // console.log('随机照片信息:', photos);
 
     // 文件数
-    var file_num = 68;
+    var file_num = 64;
     // 随机照片数组长度
     var photo_num = userinfos.imgs.length;
     console.log('photo_num=', photo_num);
@@ -207,9 +203,13 @@ function generateRand(file_num, photo_row, photo_col) {
         } else {
             $('#gallery li').remove()
             $(this).data('action', 'start').html('开始');
-            
+
             //获取随机人员照片信息及姓名
             var userinfos = syncJson('/rand');
+            var luckytimes = syncJson('/times')
+            // console.log(luckytimes.count)
+            $('#count').text('抽选人次：' + (luckytimes.count - 1))
+            console.log(userinfos.weight);
             var loadedIndex = 1;
             $.each(userinfos.imgs, function (index, item) {
                 var img = document.createElement('img');

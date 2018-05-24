@@ -1,6 +1,8 @@
 import { Users } from './db'
 import { Router } from 'express'
 import Chance from 'chance'
+// 抽中辅导员信息
+const luckys = []
 // 读取辅导员编号和权重信息
 const iUsers = []
 const wUsers = []
@@ -40,18 +42,19 @@ function generateRand (fileNum, photoRow, photoCol) {
   let names = []
   let ids = []
   let weights = []
-  rand.forEach((item) => {
-    photos.push('/images/photo/' + iUsers[item] + '.jpg')
-    names.push(nUsers[item])
-    ids.push(iUsers[item])
-    weights.push(wUsers[item])
+  rand.forEach((index) => {
+    photos.push('/images/photo/' + iUsers[index] + '.jpg')
+    names.push(nUsers[index])
+    ids.push(iUsers[index])
+    weights.push(wUsers[index])
   })
   // 幸运儿
   let lucky = chance.weighted(names, weights)
   // console.log(photos)
   // console.log(names)
-  console.log(lucky)
-  return {imgs: photos, unames: names, nums: ids, one: lucky}
+  console.log('The lucky one', lucky)
+  console.log(weights)
+  return {imgs: photos, unames: names, nums: ids, one: lucky, weight: weights}
 }
 
 /* GET home page. */
@@ -60,8 +63,14 @@ router.get('/', function (req, res, next) {
   // console.log(iUsers)
   // console.log(nUsers)
   console.log('人员个数：', iUsers.length)
+  res.clearCookie('lucky_one')
+  // 清空抽选人员数据
+  while (luckys.length > 0) {
+    luckys.pop()
+  }
   res.render('index', {
-    title: '学工系统“两随机一公开”工作交流大会'
+    title: '学工系统“两随机一公开”工作交流大会',
+    times: '抽选人次：' + luckys.length
   })
 })
 
@@ -71,7 +80,9 @@ router.get('/all', function (req, res, next) {
     title: '所有辅导员信息'
   })
 })
-
+router.get('/times', (req, res) => {
+  res.send({count: luckys.length})
+})
 /* 向客户端响应人员信息 */
 router.get('/data', function (req, res) {
   // res.send(instructorInfo)
@@ -88,7 +99,15 @@ router.get('/data', function (req, res) {
 
 /* 向客户端响应随机编号 */
 router.get('/rand', function (req, res) {
-  res.json(generateRand(iUsers.length, 1, 10))
+  console.log('CookiesInfo:', req.cookies.lucky_one)
+  let randInfo = generateRand(iUsers.length, 1, 10)
+  Users.findOne({name: randInfo.one}, {number: true})
+    .then((result) => {
+      console.log(result)
+      luckys.push(result.number)
+      res.cookie('lucky_one', luckys)
+      res.json(randInfo)
+    })
 })
 
 /* 向客户端响应所有照片信息 */
