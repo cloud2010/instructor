@@ -37,6 +37,10 @@ function generateRand (fileNum, photoRow, photoCol) {
   // 根据权重生成指定个数的抽样人员
   // let rand = chance.n(chance.weighted, photoNum, iUsers, wUsers)
 
+  // 返回已抽中人员的 index
+  let lIndex = nUsers.indexOf(luckys)
+  console.log('已抽中人员索引：', lIndex)
+
   let rand = chance.pickset(rIndex, photoNum)
   let photos = []
   let names = []
@@ -70,7 +74,8 @@ router.get('/', function (req, res, next) {
   }
   res.render('index', {
     title: '学工系统“两随机一公开”工作交流大会',
-    times: '抽选人次：' + luckys.length
+    times: '抽中人次：' + luckys.length,
+    luckys: '抽中人员：' + luckys.toString()
   })
 })
 
@@ -80,8 +85,9 @@ router.get('/all', function (req, res, next) {
     title: '所有辅导员信息'
   })
 })
+/* 向客户端响应抽选次数及人员名单 */
 router.get('/times', (req, res) => {
-  res.send({count: luckys.length})
+  res.send({count: luckys.length, names: luckys})
 })
 /* 向客户端响应人员信息 */
 router.get('/data', function (req, res) {
@@ -101,13 +107,16 @@ router.get('/data', function (req, res) {
 router.get('/rand', function (req, res) {
   console.log('CookiesInfo:', req.cookies.lucky_one)
   let randInfo = generateRand(iUsers.length, 1, 10)
-  Users.findOne({name: randInfo.one}, {number: true})
-    .then((result) => {
-      console.log(result)
-      luckys.push(result.number)
-      res.cookie('lucky_one', luckys)
-      res.json(randInfo)
-    })
+  // Users.findOne({name: randInfo.one}, {number: true})
+  //   .then((result) => {
+  //     console.log(result)
+  //     luckys.push(result.number)
+  //     res.cookie('lucky_one', luckys)
+  //     res.json(randInfo)
+  //   })
+  luckys.push(randInfo.one)
+  res.cookie('lucky_one', luckys)
+  res.json(randInfo)
 })
 
 /* 向客户端响应所有照片信息 */

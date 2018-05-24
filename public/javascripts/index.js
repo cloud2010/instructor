@@ -208,7 +208,8 @@ function generateRand(file_num, photo_row, photo_col) {
             var userinfos = syncJson('/rand');
             var luckytimes = syncJson('/times')
             // console.log(luckytimes.count)
-            $('#count').text('抽选人次：' + (luckytimes.count - 1))
+            $('#count').text('抽中人次：' + (luckytimes.count - 1))
+            $('#luckys').text('抽中人员：' + luckytimes.names.slice(1).toString())
             console.log(userinfos.weight);
             var loadedIndex = 1;
             $.each(userinfos.imgs, function (index, item) {
