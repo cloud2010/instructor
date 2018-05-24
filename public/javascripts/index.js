@@ -82,7 +82,7 @@ function generateRand(file_num, photo_row, photo_col) {
     var users = syncJson('/data');
 
     //获取随机人员照片信息及姓名
-    var userinfos = syncJson('/rand');
+    var userinfos = syncJson('/initrand');
 
     // console.log('人员信息:', users);
     // console.log('随机照片信息:', photos);
@@ -208,8 +208,8 @@ function generateRand(file_num, photo_row, photo_col) {
             var userinfos = syncJson('/rand');
             var luckytimes = syncJson('/times')
             // console.log(luckytimes.count)
-            $('#count').text('抽中人次：' + (luckytimes.count - 1))
-            $('#luckys').text('抽中人员：' + luckytimes.names.slice(1).toString())
+            $('#count').text('抽中人次：' + luckytimes.count)
+            $('#luckys').text('抽中人员：' + luckytimes.names.toString())
             console.log(userinfos.weight);
             var loadedIndex = 1;
             $.each(userinfos.imgs, function (index, item) {
@@ -245,7 +245,7 @@ function generateRand(file_num, photo_row, photo_col) {
     });
 
     $('#refresh').click(function () {
-        window.location.reload();
+        window.location.href = "/reset";
     });
 
     $('#all').click(function () {

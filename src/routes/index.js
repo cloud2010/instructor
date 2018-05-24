@@ -37,11 +37,17 @@ function generateRand (fileNum, photoRow, photoCol) {
   // 根据权重生成指定个数的抽样人员
   // let rand = chance.n(chance.weighted, photoNum, iUsers, wUsers)
 
+  let lIndexes = []
   // 返回已抽中人员的 index
-  let lIndex = nUsers.indexOf(luckys)
-  console.log('已抽中人员索引：', lIndex)
+  luckys.forEach((item) => {
+    lIndexes.push(nUsers.indexOf(item))
+  })
+  console.log('已抽中人员索引：', lIndexes)
 
-  let rand = chance.pickset(rIndex, photoNum)
+  // 去除已抽中人员索引后的差集
+  let difference = rIndex.concat(lIndexes).filter(v => !rIndex.includes(v) || !lIndexes.includes(v))
+
+  let rand = chance.pickset(difference, photoNum)
   let photos = []
   let names = []
   let ids = []
@@ -63,6 +69,24 @@ function generateRand (fileNum, photoRow, photoCol) {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+  // console.log(rand)
+  // console.log(iUsers)
+  // console.log(nUsers)
+  console.log('人员个数：', iUsers.length)
+  // res.clearCookie('lucky_one')
+  // 清空抽选人员数据
+  // while (luckys.length > 0) {
+  //   luckys.pop()
+  // }
+  res.render('index', {
+    title: '学工系统“两随机一公开”工作交流大会',
+    times: '抽中人次：' + luckys.length,
+    luckys: '抽中人员：' + luckys.toString()
+  })
+})
+
+/* GET init home page. */
+router.get('/reset', function (req, res, next) {
   // console.log(rand)
   // console.log(iUsers)
   // console.log(nUsers)
@@ -116,6 +140,13 @@ router.get('/rand', function (req, res) {
   //   })
   luckys.push(randInfo.one)
   res.cookie('lucky_one', luckys)
+  res.json(randInfo)
+})
+
+/* 向客户端响应初始随机编号 */
+router.get('/initrand', function (req, res) {
+  // console.log('CookiesInfo:', req.cookies.lucky_one)
+  let randInfo = generateRand(iUsers.length, 1, 10)
   res.json(randInfo)
 })
 
