@@ -51,7 +51,8 @@ function generateRand(file_num, photo_row, photo_col) {
         // 数组变长（每次有元素剔除）
         var index = Math.floor(Math.random() * nums.length);
         // 添加到输出数组
-        photos.push('/images/photo/' + nums[index] + '.jpg');
+        // photos.push('/images/photo/' + nums[index] + '.jpg');
+        photos.push('/images/photo/avatar.jpg');
         links.push('/instructor/' + nums[index]);
         ids.push(nums[index] - 1);
         // 剔除每次已生成随机数的索引位置，保证随机数不重复
@@ -88,7 +89,7 @@ function generateRand(file_num, photo_row, photo_col) {
     // console.log('随机照片信息:', photos);
 
     // 文件数
-    var file_num = 64;
+    var file_num = 143;
     // 随机照片数组长度
     var photo_num = userinfos.imgs.length;
     console.log('photo_num=', photo_num);
@@ -113,7 +114,8 @@ function generateRand(file_num, photo_row, photo_col) {
 
         // 辅导员ID
         var user_id = userinfos.nums[index];
-        link.href = '/instructor/' + user_id;
+        // link.href = '/instructor/' + user_id;
+        link.href = '#';
         // link.target = "_blank";
         if (userinfos.unames[index] !== undefined) {
             h2_name.innerText = userinfos.unames[index];
@@ -209,7 +211,7 @@ function generateRand(file_num, photo_row, photo_col) {
             var luckytimes = syncJson('/times')
             // console.log(luckytimes.count)
             $('#count').text('抽中人次：' + luckytimes.count)
-            $('#luckys').text('抽中人员：' + luckytimes.names.toString())
+            $('#luckys').text('中奖老师：' + luckytimes.names.toString())
             console.log(userinfos.weight);
             var loadedIndex = 1;
             $.each(userinfos.imgs, function (index, item) {
@@ -218,7 +220,8 @@ function generateRand(file_num, photo_row, photo_col) {
                 var li = document.createElement('li');
                 var h2_name = document.createElement('h2');
                 var user_id = userinfos.nums[index];
-                link.href = '/instructor/' + user_id;
+                // link.href = '/instructor/' + user_id;
+                link.href = '#';
                 // link.target = "_blank";
                 if (userinfos.unames[index] !== undefined) {
                     h2_name.innerText = userinfos.unames[index];
@@ -239,6 +242,8 @@ function generateRand(file_num, photo_row, photo_col) {
             })
             // 幸运儿悬浮显示
             $('#gallery h2:contains(' + userinfos.one + ')').parent().addClass('hover focus');
+            // 修改中奖者头像
+            $('#gallery h2:contains(' + userinfos.one + ')').prev().children().attr('src', '/images/photo/lucky.png');
             clearInterval(timer_big);
             clearInterval(timer_small);
         }

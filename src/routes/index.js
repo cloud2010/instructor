@@ -8,7 +8,7 @@ const iUsers = []
 const wUsers = []
 const nUsers = []
 // 生成随机索引集合
-const rIndex = Array.from(new Array(64), (val, index) => index)
+const rIndex = Array.from(new Array(143), (val, index) => index)
 Users.find({}, {number: true, weight: true, name: true})
   .sort({number: 1})
   .then((items) => {
@@ -53,17 +53,19 @@ function generateRand (fileNum, photoRow, photoCol) {
   let ids = []
   let weights = []
   rand.forEach((index) => {
-    photos.push('/images/photo/' + iUsers[index] + '.jpg')
+    // photos.push('/images/photo/' + iUsers[index] + '.jpg')
+    photos.push('/images/photo/avatar.jpg')
     names.push(nUsers[index])
     ids.push(iUsers[index])
     weights.push(wUsers[index])
   })
   // 幸运儿
   let lucky = chance.weighted(names, weights)
+  // let lucky = names[2]
   // console.log(photos)
   // console.log(names)
   console.log('The lucky one', lucky)
-  console.log(weights)
+  console.log('The weights array', weights)
   return {imgs: photos, unames: names, nums: ids, one: lucky, weight: weights}
 }
 
@@ -79,9 +81,9 @@ router.get('/', function (req, res, next) {
   //   luckys.pop()
   // }
   res.render('index', {
-    title: '学工系统“两随机一公开”工作交流大会',
+    title: '信息工程学院2019迎新联欢会',
     times: '抽中人次：' + luckys.length,
-    luckys: '抽中人员：' + luckys.toString()
+    luckys: '中奖老师：' + luckys.toString()
   })
 })
 
@@ -97,9 +99,10 @@ router.get('/reset', function (req, res, next) {
     luckys.pop()
   }
   res.render('index', {
-    title: '学工系统“两随机一公开”工作交流大会',
+    // title: '学工系统“两随机一公开”工作交流大会',
+    title: '信息工程学院2019迎新联欢会',
     times: '抽中人次：' + luckys.length,
-    luckys: '抽中人员：' + luckys.toString()
+    luckys: '中奖老师：' + luckys.toString()
   })
 })
 
@@ -130,7 +133,7 @@ router.get('/data', function (req, res) {
 /* 向客户端响应随机编号 */
 router.get('/rand', function (req, res) {
   console.log('CookiesInfo:', req.cookies.lucky_one)
-  let randInfo = generateRand(iUsers.length, 1, 10)
+  let randInfo = generateRand(iUsers.length, 1, 7)
   // Users.findOne({name: randInfo.one}, {number: true})
   //   .then((result) => {
   //     console.log(result)
@@ -146,7 +149,7 @@ router.get('/rand', function (req, res) {
 /* 向客户端响应初始随机编号 */
 router.get('/initrand', function (req, res) {
   // console.log('CookiesInfo:', req.cookies.lucky_one)
-  let randInfo = generateRand(iUsers.length, 1, 10)
+  let randInfo = generateRand(iUsers.length, 1, 7)
   res.json(randInfo)
 })
 
