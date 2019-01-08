@@ -142,7 +142,7 @@ router.get('/data', function (req, res) {
 /* 向客户端响应随机编号 */
 router.get('/rand', function (req, res) {
   // console.log('CookiesInfo:', req.cookies.lucky_one)
-  let randInfo = generateRand(iUsers.length, 1, 10)
+  let randInfo = generateRand(iUsers.length, 1, 6)
   // Users.findOne({name: randInfo.one}, {number: true})
   //   .then((result) => {
   //     console.log(result)
@@ -158,7 +158,7 @@ router.get('/rand', function (req, res) {
 /* 向客户端响应初始随机编号 */
 router.get('/initrand', function (req, res) {
   // console.log('CookiesInfo:', req.cookies.lucky_one)
-  let randInfo = generateRand(iUsers.length, 1, 10)
+  let randInfo = generateRand(iUsers.length, 1, 6)
   res.json(randInfo)
 })
 
