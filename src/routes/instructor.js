@@ -30,18 +30,20 @@ router.get('/:id', function (req, res) {
   // console.log('get请求参数对象 :', req.query);
   // console.log('post请求参数对象 :', req.body);
   // console.log('q的值为 :', req.params.id);
-  Users.findOne({number: req.params.id}, {}).then(result => {
-    console.log(`查询辅导员信息成功-${req.path}`)
-    // res.json(result)
-    // 数据绑定
-    res.render('instructor', result)
-  }).catch(errs => {
-    console.log(`查询出错-${errs}`)
-    res.render('instructor', {
-      name: '无该辅导员信息',
-      dept: '学院'
+  Users.findOne({ number: req.params.id }, {})
+    .then(result => {
+      console.log(`查询辅导员信息成功-${req.path}`)
+      // res.json(result)
+      // 数据绑定
+      res.render('instructor', result)
     })
-  })
+    .catch(errs => {
+      console.log(`查询出错-${errs}`)
+      res.render('instructor', {
+        name: '无该辅导员信息',
+        dept: '学院'
+      })
+    })
 })
 
 router.get('/stu/:id', function (req, res) {

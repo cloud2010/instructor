@@ -3,7 +3,10 @@
  */
 import mongoose from 'mongoose'
 import dbConfig from '../config/conn.json'
-mongoose.connect(dbConfig.db.conn)
+mongoose.connect(
+  dbConfig.db.conn,
+  { useNewUrlParser: true }
+)
 mongoose.Promise = Promise
 
 const db = mongoose.connection

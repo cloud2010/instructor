@@ -7,7 +7,8 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: 'standard',
+  extends: ['standard'],
+  plugins: ['prettier'],
   rules: {
     'no-unreachable': 1,
     'no-unused-vars': 1,

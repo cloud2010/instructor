@@ -9,17 +9,16 @@ const wUsers = []
 const nUsers = []
 // 生成随机索引集合
 const rIndex = Array.from(new Array(143), (val, index) => index)
-Users.find({}, {number: true, weight: true, name: true})
-  .sort({number: 1})
-  .then((items) => {
-    items.forEach((item) => {
+Users.find({}, { number: true, weight: true, name: true })
+  .sort({ number: 1 })
+  .then(items => {
+    items.forEach(item => {
       iUsers.push(item.number)
       wUsers.push(item.weight)
       nUsers.push(item.name)
-    }
-    )
+    })
   })
-  .catch((err) => {
+  .catch(err => {
     console.log(err)
   })
 const router = Router()
@@ -34,25 +33,35 @@ const chance = new Chance()
  */
 function generateRand (fileNum, photoRow, photoCol) {
   let photoNum = photoRow * photoCol
-  // 根据权重生成指定个数的抽样人员
-  // let rand = chance.n(chance.weighted, photoNum, iUsers, wUsers)
+  // 根据权重生成指定个数的抽样人员，无法保证不重复抽取
+  // let randTmp = chance.n(chance.weighted, photoNum, iUsers, wUsers)
+  // console.log('rand val output:', randTmp)
 
   let lIndexes = []
   // 返回已抽中人员的 index
-  luckys.forEach((item) => {
+  luckys.forEach(item => {
     lIndexes.push(nUsers.indexOf(item))
   })
   console.log('已抽中人员索引：', lIndexes)
 
   // 去除已抽中人员索引后的差集
-  let difference = rIndex.concat(lIndexes).filter(v => !rIndex.includes(v) || !lIndexes.includes(v))
+  let difference = rIndex
+    .concat(lIndexes)
+    .filter(v => !rIndex.includes(v) || !lIndexes.includes(v))
 
+  // 去除抽中人员后的权重向量
+  let lwUsers = []
+  difference.forEach(index => {
+    lwUsers.push(wUsers[index])
+  })
+  console.log('去除抽中人员后的权重向量shape:', lwUsers.length)
+  // 从剩余索引中挑出抽中人员，只有使用 pickset 保证不重复抽取
   let rand = chance.pickset(difference, photoNum)
   let photos = []
   let names = []
   let ids = []
   let weights = []
-  rand.forEach((index) => {
+  rand.forEach(index => {
     // photos.push('/images/photo/' + iUsers[index] + '.jpg')
     photos.push('/images/photo/avatar.jpg')
     names.push(nUsers[index])
@@ -64,9 +73,9 @@ function generateRand (fileNum, photoRow, photoCol) {
   // let lucky = names[2]
   // console.log(photos)
   // console.log(names)
-  console.log('The lucky one', lucky)
-  console.log('The weights array', weights)
-  return {imgs: photos, unames: names, nums: ids, one: lucky, weight: weights}
+  console.log('The lucky one:', lucky)
+  console.log('The weights array:', weights)
+  return { imgs: photos, unames: names, nums: ids, one: lucky, weight: weights }
 }
 
 /* GET home page. */
@@ -114,13 +123,13 @@ router.get('/all', function (req, res, next) {
 })
 /* 向客户端响应抽选次数及人员名单 */
 router.get('/times', (req, res) => {
-  res.send({count: luckys.length, names: luckys})
+  res.send({ count: luckys.length, names: luckys })
 })
 /* 向客户端响应人员信息 */
 router.get('/data', function (req, res) {
   // res.send(instructorInfo)
   Users.find({}, {})
-    .sort({number: 1})
+    .sort({ number: 1 })
     .then(result => {
       console.log(`查询全部辅导员信息-${req.path}`)
       res.json(result)
@@ -132,8 +141,8 @@ router.get('/data', function (req, res) {
 
 /* 向客户端响应随机编号 */
 router.get('/rand', function (req, res) {
-  console.log('CookiesInfo:', req.cookies.lucky_one)
-  let randInfo = generateRand(iUsers.length, 1, 7)
+  // console.log('CookiesInfo:', req.cookies.lucky_one)
+  let randInfo = generateRand(iUsers.length, 1, 10)
   // Users.findOne({name: randInfo.one}, {number: true})
   //   .then((result) => {
   //     console.log(result)
@@ -149,7 +158,7 @@ router.get('/rand', function (req, res) {
 /* 向客户端响应初始随机编号 */
 router.get('/initrand', function (req, res) {
   // console.log('CookiesInfo:', req.cookies.lucky_one)
-  let randInfo = generateRand(iUsers.length, 1, 7)
+  let randInfo = generateRand(iUsers.length, 1, 10)
   res.json(randInfo)
 })
 
